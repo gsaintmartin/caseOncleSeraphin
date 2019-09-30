@@ -152,7 +152,7 @@ sup {
 }
 
 a {
-  color: #4e73df;
+  color: #ffffff;
   text-decoration: none;
   background-color: transparent;
 }
@@ -2587,7 +2587,7 @@ textarea.form-control {
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #858796;
+  color:#8b0000;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
