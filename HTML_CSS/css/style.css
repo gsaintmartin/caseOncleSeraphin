@@ -353,7 +353,7 @@ ol {
 ---------------------*/
 
 .header-top {
-	padding: 18px 0 14px;
+	padding: 10px 20px;
 	background-color: navajowhite;
 }
 
@@ -365,7 +365,7 @@ ol {
 .header-search-form {
 	width: 100%;
 	position: relative;
-	padding: 0 10px;
+	padding: 25px 5px;
 }
 
 .header-search-form input {
@@ -374,7 +374,7 @@ ol {
 	font-size: 14px;
 	border-radius: 50px;
 	border: none;
-	padding: 0 19px;
+	padding: 25px 5px;
 	background: #f0f0f0;
 }
 
@@ -393,6 +393,7 @@ ol {
 .user-panel .up-item {
 	display: inline-block;
 	font-size: 14px;
+	padding: 25px 5px;
 }
 
 .user-panel .up-item i {
@@ -1866,7 +1867,7 @@ ol {
 }
 
 .cart-table .total-cost {
-	background: #f51167;
+	background:#f4a460;
 	margin: 0 -34px;
 	text-align: right;
 	padding: 22px 0;
@@ -1916,7 +1917,7 @@ ol {
 	text-transform: uppercase;
 	font-size: 16px;
 	font-weight: 700;
-	color: #f51167;
+	color: #f4a460;
 	cursor: pointer;
 }
 
@@ -2171,7 +2172,7 @@ ol {
 
 .contact-social a:hover {
 	color: #fff;
-	background: #f51167;
+	background: #f4a460;
 }
 
 .contact-form input,
@@ -2333,7 +2334,7 @@ ol {
 		font-size: 10px;
 		font-weight: 700;
 		color: #fff;
-		background: #f51167;
+		background:#f4a460;
 		line-height: 1;
 		text-transform: uppercase;
 		padding: 5px 9px 1px;
