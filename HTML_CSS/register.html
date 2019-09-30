@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Enregistrement- Case de l'Oncle Séraphin</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/flaticon.css" />
+	<link rel="stylesheet" href="css/slicknav.min.css" />
+	<link rel="stylesheet" href="css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="css/owl.carousel.min.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/sb-admin-2.css" rel="stylesheet">
+</head>
+
+<body class="modal-open" class="bg-gradient">
+
+  <div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Créer un compte</h1>
+              </div>
+              <form class="user">
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                      placeholder="Prénom">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Nom">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                    placeholder="Adresse Email">
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="password" class="form-control form-control-user" id="exampleInputPassword"
+                      placeholder="Mot de passe">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword"
+                      placeholder="Répéter mot de passe">
+                  </div>
+                </div>
+                <a href="login.html" class="btn btn-danger btn-user btn-block">
+                  Enregistrer
+                </a>
+                <hr>
+
+              </form>
+              <hr>
+              <div class="text-center">
+                <a class="small" href="forgot-password.html">Mot de passe oublié?</a>
+
+                <a href="" class="small btn btn-default btn-rounded waves-effect waves-light" data-toggle="modal"
+                  data-target="#elegantModalForm">Pas encore membre? Créer un compte</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Connexion -->
+  <section class="modal-connexion">
+    <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content-connexion form-elegant">
+          <!--Header-->
+          <div class="modal-header text-center">
+            <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Se
+                connecter</strong></h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body mx-4">
+            <!--Body-->
+            <div class="md-form mb-5">
+              <input type="email" id="Form-email1" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="Form-email1">email</label>
+            </div>
+
+            <div class="md-form pb-3">
+              <input type="password" id="Form-pass1" class="form-control validate">
+              <label data-error="wrong" data-success="right" for="Form-pass1">mot de passe</label>
+              <p class="font-small blue-text d-flex justify-content-end">Mot de passe<a href="forgot-password.html"
+                  class=" ml-1">
+                  oublié?</a></p>
+            </div>
+
+            <div class="text-center mb-3">
+              <button type="button"
+                class="btn btn-danger btn-user btn-block btn-text blue-gradient btn-rounded z-depth-1a ">Se
+                connecter</button>
+            </div>
+            <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> Se
+              connecter via :</p>
+
+            <div class="row my-3 d-flex justify-content-center">
+              <div class="liens-connexion-alternative">
+                <!--Facebook-->
+                <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><a href=""
+                    class="facebook"><i class="fa fa-facebook"></i></a></button>
+                <!--Twitter-->
+                <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><a href="" class="twitter"><i
+                      class="fa fa-twitter"></i></a></button>
+                <!--Google +-->
+                <button type="button" class="btn btn-white btn-rounded z-depth-1a"> <a href="" class="google-plus"><i
+                      class="fa fa-google-plus"></i></a></button>
+              </div>
+            </div>
+          </div>
+          <!--Footer-->
+          <div class="modal-footer mx-5 pt-3 mb-1">
+            <p class="font-small grey-text d-flex justify-content-end">Pas encore membre? <a href="./register.html"
+                class=" ml-1">
+                S'enregistrer</a></p>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+    <!-- Modal -->
+  </section>
+  <!-- End Modal Connexion -->
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!--====== Javascripts & Jquery ======-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

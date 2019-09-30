@@ -1,0 +1,54 @@
+package caseoncleseraphin.controller;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import caseoncleseraphin.exception.BadRequestException;
+import caseoncleseraphin.model.Category;
+import caseoncleseraphin.service.CategoryService;
+import javassist.NotFoundException;
+
+@RestController
+@RequestMapping("/api/categories")
+public class CategoryController {
+	@Autowired
+	private CategoryService categoryService;
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@ResponseBody
+	public Category findById(@PathVariable Long id) throws NotFoundException {
+		return categoryService.findOneById(id);
+	}
+
+	@RequestMapping(method = RequestMethod.GET)
+	@ResponseBody
+	public List<Category> findAll() {
+		return categoryService.findAll();
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	@ResponseStatus(HttpStatus.CREATED)
+	public void create(@RequestBody Category category) throws BadRequestException {
+		categoryService.save(category);
+	}
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	@ResponseBody
+	public void update(@PathVariable Long id, @RequestBody Category category) throws BadRequestException {
+		categoryService.update(id, category);
+	}
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@ResponseBody
+	public void delete(@PathVariable Long id) throws BadRequestException {
+		categoryService.delete(id);
+	}
+}
