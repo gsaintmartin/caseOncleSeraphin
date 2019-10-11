@@ -1,6 +1,7 @@
 package caseoncleseraphin.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,7 @@ import javassist.NotFoundException;
 
 @RestController
 @RequestMapping("/api/categories")
-public class CategoryController extends Controller {
+public class CategoryController extends Controller<Object> {
 	@Autowired
 	private CategoryService categoryService;
 
@@ -51,4 +52,30 @@ public class CategoryController extends Controller {
 	public void delete(@PathVariable Long id) throws BadRequestException {
 		categoryService.delete(id);
 	}
+
+	@Override
+	public Object findById() throws NotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void create() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 }
