@@ -24,7 +24,7 @@ import javassist.NotFoundException;
 
 @RestController
 @RequestMapping ("/api/clients")
-public class ClientController {
+public class ClientController extends Controller<Object> {
     @Autowired
     private ClientService clientService;
     
@@ -67,5 +67,29 @@ public class ClientController {
 		ClientCriteria criteria = new ClientCriteria(id,name, firstName, username, creationDate, numberOrdersMade);
 		
 		return clientService.search(criteria);
+	}
+
+	@Override
+	public Object findById() throws NotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void create() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
 	}
 }

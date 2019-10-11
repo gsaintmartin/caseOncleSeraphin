@@ -19,7 +19,7 @@ import javassist.NotFoundException;
 
 @RestController
 @RequestMapping("/api/commands")
-public class CommandController {
+public class CommandController extends Controller<Object> {
 	@Autowired
 	private CommandService commandService;
 
@@ -51,5 +51,29 @@ public class CommandController {
 	@ResponseBody
 	public void delete(@PathVariable Long id) throws BadRequestException {
 		commandService.delete(id);
+	}
+
+	@Override
+	public Object findById() throws NotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void create() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
 	}
 }
