@@ -25,7 +25,7 @@ public class ClientCriteria {
 
 	
 	public boolean hasCriterias() {
-		return !StringUtils.isEmpty(name) || id != null || name != null || firstName != null  || username != null  || creationDate != null  || numberOrdersMade != 0;
+		return !StringUtils.isEmpty(name) || id != null || firstName != null  || username != null  || creationDate != null  || numberOrdersMade != 0;
 	}
 
 
