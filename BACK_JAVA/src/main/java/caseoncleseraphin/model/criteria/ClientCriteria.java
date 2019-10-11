@@ -12,7 +12,17 @@ public class ClientCriteria {
 	private LocalDate creationDate;
 	private int numberOrdersMade;
 	
-	
+	public ClientCriteria(Long id, String name, String firstName, String username, LocalDate creationDate,
+			int numberOrdersMade) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.firstName = firstName;
+		this.username = username;
+		this.creationDate = creationDate;
+		this.numberOrdersMade = numberOrdersMade;
+	}
+
 	
 	public boolean hasCriterias() {
 		return !StringUtils.isEmpty(name) || id != null || name != null || firstName != null  || username != null  || creationDate != null  || numberOrdersMade != 0;
@@ -92,17 +102,7 @@ public class ClientCriteria {
 
 
 
-	public ClientCriteria(Long id, String name, String firstName, String username, LocalDate creationDate,
-			int numberOrdersMade) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.firstName = firstName;
-		this.username = username;
-		this.creationDate = creationDate;
-		this.numberOrdersMade = numberOrdersMade;
-	}
-
+	
 	
 
 }

@@ -19,7 +19,7 @@ import javassist.NotFoundException;
 
 @RestController
 @RequestMapping("/api/commands")
-public class CommandController {
+public class CommandController extends Controller {
 	@Autowired
 	private CommandService commandService;
 

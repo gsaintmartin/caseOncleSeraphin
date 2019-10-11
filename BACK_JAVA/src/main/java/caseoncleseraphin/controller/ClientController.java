@@ -24,7 +24,7 @@ import javassist.NotFoundException;
 
 @RestController
 @RequestMapping ("/api/clients")
-public class ClientController {
+public class ClientController extends Controller {
     @Autowired
     private ClientService clientService;
     

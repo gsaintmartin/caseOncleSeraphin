@@ -18,7 +18,7 @@ import javassist.NotFoundException;
 
 @RestController
 @RequestMapping("/api/categories")
-public class CategoryController {
+public class CategoryController extends Controller {
 	@Autowired
 	private CategoryService categoryService;
 

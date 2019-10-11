@@ -22,7 +22,7 @@ import javassist.NotFoundException;
 
 @RestController
 @RequestMapping("/api/products")
-public class ProductController {
+public class ProductController extends Controller {
 	@Autowired
 	private ProductService productService;
 
