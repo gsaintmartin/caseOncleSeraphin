@@ -1,5 +1,6 @@
 package caseoncleseraphin.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +9,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import caseoncleseraphin.exception.BadRequestException;
+import caseoncleseraphin.model.Client;
 import caseoncleseraphin.model.Command;
+import caseoncleseraphin.model.CommandState;
+import caseoncleseraphin.model.criteria.CommandCriteria;
 import caseoncleseraphin.service.CommandService;
 import javassist.NotFoundException;
 
@@ -53,6 +58,15 @@ public class CommandController extends Controller<Object> {
 		commandService.delete(id);
 	}
 
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public List<Command> search(@RequestParam(required = false)  Long commandReference,
+			@RequestParam(required = false) LocalDate commandDate,
+			@RequestParam(required = false) CommandState state,
+			@RequestParam(required = false) Client client) {
+		CommandCriteria criteria = new CommandCriteria(commandReference,commandDate, state, client);
+		
+		return commandService.search(criteria);
+	}
 	@Override
 	public Object findById() throws NotFoundException {
 		// TODO Auto-generated method stub
