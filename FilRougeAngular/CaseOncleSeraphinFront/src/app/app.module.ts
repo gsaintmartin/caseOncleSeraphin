@@ -20,7 +20,6 @@ import { NavbarCustomerComponent } from './layout/navbar-customer/navbar-custome
 @NgModule({
   declarations: [
     AppComponent,
-
     CartComponent,
     CategoryAgricolesComponent,
     CategoryAllComponent,
@@ -37,6 +36,7 @@ import { NavbarCustomerComponent } from './layout/navbar-customer/navbar-custome
   ],
   imports: [
     BrowserModule
+
   ],
   providers: [],
   bootstrap: [
