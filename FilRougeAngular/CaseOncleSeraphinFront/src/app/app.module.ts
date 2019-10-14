@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { DescriptionComponent } from './description/description.component';
+
 import { CartComponent } from './site/cart/cart.component';
 import { CategoryAgricolesComponent } from './site/category-agricoles/category-agricoles.component';
 import { CategoryAllComponent } from './site/category-all/category-all.component';
@@ -20,7 +20,7 @@ import { NavbarCustomerComponent } from './layout/navbar-customer/navbar-custome
 @NgModule({
   declarations: [
     AppComponent,
-    DescriptionComponent,
+
     CartComponent,
     CategoryAgricolesComponent,
     CategoryAllComponent,
