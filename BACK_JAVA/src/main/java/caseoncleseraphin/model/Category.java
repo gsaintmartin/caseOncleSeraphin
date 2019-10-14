@@ -18,7 +18,6 @@ public class Category implements IdEntity {
 	
 	private static final long serialVersionUID = 3100806292678327311L;
 	
-	private int categoryCode;
 	private String categoryName;
 	
 	@Id
@@ -33,18 +32,9 @@ public class Category implements IdEntity {
 		super();
 	}
 
-	public Category(int categoryCode, String categoryName) {
+	public Category(String categoryName) {
 		super();
-		this.categoryCode = categoryCode;
 		this.categoryName = categoryName;
-	}
-
-	public int getCategoryCode() {
-		return categoryCode;
-	}
-
-	public void setCategoryCode(int categoryCode) {
-		this.categoryCode = categoryCode;
 	}
 
 	public String getCategoryName() {

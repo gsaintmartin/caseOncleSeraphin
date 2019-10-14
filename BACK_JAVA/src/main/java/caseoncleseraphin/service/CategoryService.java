@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import caseoncleseraphin.dao.CategoryJpaRepository;
 import caseoncleseraphin.exception.BadRequestException;
 import caseoncleseraphin.model.Category;
+import caseoncleseraphin.model.criteria.CategoryCriteria;
 import javassist.NotFoundException;
 
 @Service
@@ -58,5 +59,9 @@ public class CategoryService {
 			throw new BadRequestException("La catégorie n'a pas été supprimée", e);
 		}
 
+	}
+
+	public List<Category> search(CategoryCriteria criteria) {
+		return categoryJpaRepository.search(criteria);
 	}
 }
