@@ -11,9 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import caseoncleseraphin.dao.ClientJpaRepository;
 import caseoncleseraphin.exception.BadRequestException;
+import caseoncleseraphin.exception.NotFoundException;
 import caseoncleseraphin.model.Client;
 import caseoncleseraphin.model.criteria.ClientCriteria;
-import javassist.NotFoundException;
 
 @Service
 @Transactional

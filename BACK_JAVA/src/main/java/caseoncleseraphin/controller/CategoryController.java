@@ -14,78 +14,58 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import caseoncleseraphin.exception.BadRequestException;
+import caseoncleseraphin.exception.NotFoundException;
 import caseoncleseraphin.model.Category;
 import caseoncleseraphin.model.criteria.CategoryCriteria;
 import caseoncleseraphin.service.CategoryService;
-import javassist.NotFoundException;
 
 @RestController
 @RequestMapping("/api/categories")
-public class CategoryController extends Controller<Object> {
+public class CategoryController extends Controller<Category> {
 	@Autowired
 	private CategoryService categoryService;
 
+	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public Category findById(@PathVariable Long id) throws NotFoundException {
 		return categoryService.findOneById(id);
 	}
 
+	@Override
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public List<Category> findAll() {
 		return categoryService.findAll();
 	}
 
+	@Override
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public void create(@RequestBody Category category) throws BadRequestException {
 		categoryService.save(category);
 	}
 
+	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	@ResponseBody
 	public void update(@PathVariable Long id, @RequestBody Category category) throws BadRequestException {
 		categoryService.update(id, category);
 	}
 
+	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	@ResponseBody
 	public void delete(@PathVariable Long id) throws BadRequestException {
 		categoryService.delete(id);
 	}
 
-	 @RequestMapping(value = "/search", method = RequestMethod.GET)
-		public List<Category> search(@RequestParam(required = false) String categoryName,
-				@RequestParam(required = false) Long id) {
-			CategoryCriteria criteria = new CategoryCriteria(categoryName, id);
-			
-			return categoryService.search(criteria);
-		}
-	
-	@Override
-	public Object findById() throws NotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public List<Category> search(@RequestParam(required = false) String categoryName,
+			@RequestParam(required = false) Long id) {
+		CategoryCriteria criteria = new CategoryCriteria(categoryName, id);
+
+		return categoryService.search(criteria);
 	}
 
-	@Override
-	public void create() throws BadRequestException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update() throws BadRequestException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete() throws BadRequestException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
 }

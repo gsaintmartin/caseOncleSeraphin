@@ -10,9 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import caseoncleseraphin.dao.CategoryJpaRepository;
 import caseoncleseraphin.exception.BadRequestException;
+import caseoncleseraphin.exception.NotFoundException;
 import caseoncleseraphin.model.Category;
 import caseoncleseraphin.model.criteria.CategoryCriteria;
-import javassist.NotFoundException;
 
 @Service
 @Transactional
