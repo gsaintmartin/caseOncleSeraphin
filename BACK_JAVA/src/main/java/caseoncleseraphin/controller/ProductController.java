@@ -22,7 +22,7 @@ import javassist.NotFoundException;
 
 @RestController
 @RequestMapping("/api/products")
-public class ProductController {
+public class ProductController extends Controller<Object> {
 	@Autowired
 	private ProductService productService;
 
@@ -65,6 +65,36 @@ public class ProductController {
 		ProductCriteria criteria = new ProductCriteria(name, category,  priceMin, priceMax, company);
 		
 		return productService.search(criteria);
+	}
+
+	@Override
+	public Object findById() throws NotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void create() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete() throws BadRequestException {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

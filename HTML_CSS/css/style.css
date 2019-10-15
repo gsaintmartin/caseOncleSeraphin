@@ -15,10 +15,8 @@ body {
 	height: 100%;
 	font-family: 'Josefin Sans', sans-serif;
 	-webkit-font-smoothing: antialiased;
-
+	font-smoothing: antialiased;
 }
-
-
 
 
 h1,
@@ -65,6 +63,8 @@ p {
 img {
 	max-width: 100%;
 }
+
+
 .payment-list img{
 	max-width: 50px;
 	padding-right:20px;
@@ -144,28 +144,6 @@ ol {
 -----------------------*/
 
 /* buttons */
-
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    color: #858796;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.35rem;
-    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-}
 
 .site-btn {
 	display: inline-block;
@@ -376,9 +354,8 @@ ol {
   Header section
 ---------------------*/
 
-
 .header-top {
-	
+	padding: 10px 20px;
 	background-color: navajowhite;
 }
 
@@ -390,7 +367,7 @@ ol {
 .header-search-form {
 	width: 100%;
 	position: relative;
-	padding: 25px 10px;
+	padding: 25px 5px;
 }
 
 .header-search-form input {
@@ -399,7 +376,7 @@ ol {
 	font-size: 14px;
 	border-radius: 50px;
 	border: none;
-	padding: 0 19px;
+	padding: 25px 5px;
 	background: #f0f0f0;
 }
 
@@ -418,14 +395,7 @@ ol {
 .user-panel .up-item {
 	display: inline-block;
 	font-size: 14px;
-
-}
-
-.user-panel {
-	justify-content: center;
-	align-items: center;
-	font-size: 14px;
-	padding: 25px 55px;
+	padding: 25px 5px;
 }
 
 .user-panel .up-item i {
@@ -1059,13 +1029,13 @@ ol {
 
 .footer-section {
 	background: #282828;
-	padding-top: 10px;
+	padding-top: 60px;
 }
 
 .footer-logo {
 	padding-bottom: 60px;
-	width: 15%;
-
+	width: 20%;
+	size: 2cm;
 }
 
 .footer-widget {
@@ -1899,7 +1869,7 @@ ol {
 }
 
 .cart-table .total-cost {
-	background: #f51167;
+	background:#f4a460;
 	margin: 0 -34px;
 	text-align: right;
 	padding: 22px 0;
@@ -1949,7 +1919,7 @@ ol {
 	text-transform: uppercase;
 	font-size: 16px;
 	font-weight: 700;
-	color: #f51167;
+	color: #f4a460;
 	cursor: pointer;
 }
 
@@ -2204,7 +2174,7 @@ ol {
 
 .contact-social a:hover {
 	color: #fff;
-	background: #f51167;
+	background: #f4a460;
 }
 
 .contact-form input,
@@ -2366,7 +2336,7 @@ ol {
 		font-size: 10px;
 		font-weight: 700;
 		color: #fff;
-		background: #f51167;
+		background:#f4a460;
 		line-height: 1;
 		text-transform: uppercase;
 		padding: 5px 9px 1px;
@@ -2478,15 +2448,5 @@ ol {
 	}
 	.social-links a span {
 		display: none;
-	}
-
-	.compte {
-
-		padding: 6px;
-	}
-
-	.connect {
-
-		padding: 0px;
 	}
 }
