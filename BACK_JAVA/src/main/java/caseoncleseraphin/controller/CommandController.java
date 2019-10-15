@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import caseoncleseraphin.exception.BadRequestException;
+import caseoncleseraphin.exception.NotFoundException;
 import caseoncleseraphin.model.Client;
 import caseoncleseraphin.model.Command;
 import caseoncleseraphin.model.CommandState;
 import caseoncleseraphin.model.criteria.CommandCriteria;
 import caseoncleseraphin.service.CommandService;
-import javassist.NotFoundException;
 
 @RestController
 @RequestMapping("/api/commands")
-public class CommandController extends Controller<Object> {
+public class CommandController extends Controller<Command> {
 	@Autowired
 	private CommandService commandService;
 
@@ -66,28 +66,5 @@ public class CommandController extends Controller<Object> {
 		CommandCriteria criteria = new CommandCriteria(commandReference,commandDate, state, client);
 		
 		return commandService.search(criteria);
-	}
-	@Override
-	public Object findById() throws NotFoundException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void create() throws BadRequestException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update() throws BadRequestException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete() throws BadRequestException {
-		// TODO Auto-generated method stub
-		
 	}
 }

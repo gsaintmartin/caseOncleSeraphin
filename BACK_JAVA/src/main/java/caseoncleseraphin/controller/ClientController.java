@@ -16,47 +16,53 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import caseoncleseraphin.exception.BadRequestException;
+import caseoncleseraphin.exception.NotFoundException;
 import caseoncleseraphin.model.Client;
 import caseoncleseraphin.model.criteria.ClientCriteria;
 import caseoncleseraphin.service.ClientService;
-import javassist.NotFoundException;
 
 
 @RestController
 @RequestMapping ("/api/clients")
-public class ClientController extends Controller<Object> {
+public class ClientController extends Controller<Client> {
     @Autowired
     private ClientService clientService;
     
+    @Override
     @RequestMapping (value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Client findById(@PathVariable Long id) throws NotFoundException {
     return clientService.findOneById(id);
     }
-    
+
+    @Override
     @RequestMapping ( method = RequestMethod.GET)
     @ResponseBody
     public List<Client> findAll() {
     return clientService.findAll();
     }
-    
+
+    @Override
     @RequestMapping (method = RequestMethod.POST)
     @ResponseStatus (HttpStatus.CREATED)
     public void create (@RequestBody Client client)  throws BadRequestException{
 			clientService.save (client);
     }
-    
+
+    @Override
     @RequestMapping (value = "/{id}", method = RequestMethod.PUT)
     @ResponseBody
     public void update (@PathVariable Long id, @RequestBody Client client) throws BadRequestException {
     	clientService.update (id, client);
     }
-    
+
+    @Override
     @RequestMapping (value = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     public void delete (@PathVariable Long id) throws BadRequestException {
     	clientService.delete (id);
     }
+    
     @RequestMapping(value = "/search", method = RequestMethod.GET)
 	public List<Client> search(@RequestParam(required = false) String name,
 			@RequestParam(required = false) Long id,
@@ -67,29 +73,5 @@ public class ClientController extends Controller<Object> {
 		ClientCriteria criteria = new ClientCriteria(id,name, firstName, username, creationDate, numberOrdersMade);
 		
 		return clientService.search(criteria);
-	}
-
-	@Override
-	public Object findById() throws NotFoundException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void create() throws BadRequestException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update() throws BadRequestException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete() throws BadRequestException {
-		// TODO Auto-generated method stub
-		
 	}
 }
