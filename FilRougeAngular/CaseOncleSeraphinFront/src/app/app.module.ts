@@ -16,7 +16,26 @@ import { RegisterComponent } from './site/register/register.component';
 import { TemplateViergeComponent } from './site/template-vierge/template-vierge.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { NavbarCustomerComponent } from './layout/navbar-customer/navbar-customer.component';
+import { Routes, RouterModule } from '@angular/router';
+import { Erreur404Component } from './site/erreur404/erreur404.component';
 
+const appRoutes: Routes = [
+  { path: 'cart', component: CartComponent },
+  { path: 'category-agricoles', component: CategoryAgricolesComponent },
+  { path: 'category-all', component: CategoryAllComponent },
+  { path: 'category-blancs', component: CategoryBlancsComponent },
+  { path: 'category-vieux', component: CategoryVieuxComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'page-admin', component: PageAdminComponent },
+  { path: 'product', component: ProductComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'index', component: AppComponent },
+  // { path: 'auth', component: AuthComponent },
+  // { path: 'appareils/:id', canActivate : [AuthGuard], component: SingleAppareilComponent },
+  { path: 'not-found', component: Erreur404Component },
+  { path: '**', redirectTo: '/not-found' }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +54,8 @@ import { NavbarCustomerComponent } from './layout/navbar-customer/navbar-custome
     NavbarCustomerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
 
   ],
   providers: [],
