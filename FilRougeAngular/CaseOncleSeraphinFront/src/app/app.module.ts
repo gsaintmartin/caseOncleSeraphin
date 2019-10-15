@@ -26,13 +26,13 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'category-agricoles', component: CategoryAgricolesComponent },
-  { path: 'category-all', component: CategoryAllComponent },
-  { path: 'category-blancs', component: CategoryBlancsComponent },
-  { path: 'category-vieux', component: CategoryVieuxComponent },
+  { path: 'category_agricoles', component: CategoryAgricolesComponent },
+  { path: 'category_all', component: CategoryAllComponent },
+  { path: 'category_blancs', component: CategoryBlancsComponent },
+  { path: 'category_vieux', component: CategoryVieuxComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'page-admin', component: PageAdminComponent },
+  { path: 'page_admin', component: PageAdminComponent },
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   // { path: 'auth', component: AuthComponent },
@@ -40,6 +40,7 @@ const appRoutes: Routes = [
   { path: 'not-found', component: Erreur404Component },
   { path: '**', redirectTo: '/not-found' }
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
