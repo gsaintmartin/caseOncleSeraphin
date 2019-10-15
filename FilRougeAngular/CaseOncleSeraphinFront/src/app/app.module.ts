@@ -18,8 +18,13 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { NavbarCustomerComponent } from './layout/navbar-customer/navbar-customer.component';
 import { Routes, RouterModule } from '@angular/router';
 import { Erreur404Component } from './site/erreur404/erreur404.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { HomeComponent } from './site/home/home.component';
+import { CarouselConfigComponent } from './layout/carousel-config/carousel-config.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'cart', component: CartComponent },
   { path: 'category-agricoles', component: CategoryAgricolesComponent },
   { path: 'category-all', component: CategoryAllComponent },
@@ -30,7 +35,6 @@ const appRoutes: Routes = [
   { path: 'page-admin', component: PageAdminComponent },
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'index', component: AppComponent },
   // { path: 'auth', component: AuthComponent },
   // { path: 'appareils/:id', canActivate : [AuthGuard], component: SingleAppareilComponent },
   { path: 'not-found', component: Erreur404Component },
@@ -51,14 +55,22 @@ const appRoutes: Routes = [
     RegisterComponent,
     TemplateViergeComponent,
     FooterComponent,
-    NavbarCustomerComponent
+    NavbarCustomerComponent,
+    Erreur404Component,
+    HomeComponent,
+    CarouselConfigComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    CarouselModule.forRoot()
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_BASE_HREF, useValue: '/'
+    }
+  ],
   bootstrap: [
     AppComponent
   ]
