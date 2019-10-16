@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginInfo } from '../login-info';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,14 @@ import { LoginInfo } from '../login-info';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  username = 'bibiphoque34'
+  password = ''
+  invalidLogin = false
 
   loginInfo: LoginInfo = new LoginInfo();
 
-  constructor(private activeModalService: NgbActiveModal) { }
+  constructor(private activeModalService: NgbActiveModal,
+    private loginservice: AuthenticationService) { }
 
   ngOnInit() {
   }
@@ -22,5 +27,12 @@ export class LoginComponent implements OnInit {
 
   dismiss() {
     this.activeModalService.close();
+  }
+  checkLogin() {
+    if (this.loginservice.authenticate(this.username, this.password)
+    ) {
+      this.invalidLogin = false
+    } else
+      this.invalidLogin = true
   }
 }

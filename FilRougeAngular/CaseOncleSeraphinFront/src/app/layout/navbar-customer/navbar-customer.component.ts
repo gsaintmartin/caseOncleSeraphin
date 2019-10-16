@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from 'src/app/login/login.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 @Component({
   selector: 'app-navbar-customer',
@@ -9,7 +10,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class NavbarCustomerComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, public loginService: AuthenticationService) { }
 
   ngOnInit() {
   }
