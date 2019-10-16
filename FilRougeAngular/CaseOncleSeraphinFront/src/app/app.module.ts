@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -22,6 +24,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { HomeComponent } from './site/home/home.component';
 import { CarouselConfigComponent } from './layout/carousel-config/carousel-config.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   { path: 'index', component: HomeComponent },
@@ -35,6 +38,7 @@ const appRoutes: Routes = [
   { path: 'page_admin', component: PageAdminComponent },
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
   // { path: 'auth', component: AuthComponent },
   // { path: 'appareils/:id', canActivate : [AuthGuard], component: SingleAppareilComponent },
   { path: 'not-found', component: Erreur404Component },
@@ -59,13 +63,15 @@ const appRoutes: Routes = [
     NavbarCustomerComponent,
     Erreur404Component,
     HomeComponent,
-    CarouselConfigComponent
+    CarouselConfigComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    CarouselModule.forRoot()
-
+    CarouselModule.forRoot(),
+    NgbModule,
+    FormsModule
   ],
   providers: [
     {
@@ -74,6 +80,7 @@ const appRoutes: Routes = [
   ],
   bootstrap: [
     AppComponent
-  ]
+  ],
+  entryComponents: [NavbarCustomerComponent]
 })
 export class AppModule { }
