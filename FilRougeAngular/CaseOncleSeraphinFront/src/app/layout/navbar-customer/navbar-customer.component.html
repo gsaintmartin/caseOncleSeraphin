@@ -21,9 +21,9 @@
               <i class="flaticon-profile"></i>
 
               <a   class="connect btn btn-default btn-rounded waves-effect waves-light"
-                data-toggle="modal" data-target="#elegantModalForm" (click)="openModal()">Se connecter</a>
-              <a  routerLink="register">Créer un compte</a>
-
+                data-toggle="modal" data-target="#elegantModalForm" *ngIf="!loginService.isUserLoggedIn()" (click)="openModal()">Se connecter</a>
+              <a *ngIf="!loginService.isUserLoggedIn()" routerLink="register">Créer un compte</a>
+              <a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a>
             </div>
             <div class="up-item">
               <div class="shopping-card">
