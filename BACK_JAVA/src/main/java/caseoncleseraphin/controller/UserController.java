@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,61 +18,64 @@ import org.springframework.web.bind.annotation.RestController;
 
 import caseoncleseraphin.exception.BadRequestException;
 import caseoncleseraphin.exception.NotFoundException;
-import caseoncleseraphin.model.Client;
-import caseoncleseraphin.model.criteria.ClientCriteria;
-import caseoncleseraphin.service.ClientService;
+import caseoncleseraphin.model.User;
+import caseoncleseraphin.model.criteria.UserCriteria;
+import caseoncleseraphin.service.UserService;
 
 
 @RestController
-@RequestMapping ("/api/clients")
-public class ClientController extends Controller<Client> {
+@RequestMapping ("/api/users")
+public class UserController extends Controller<User> {
     @Autowired
-    private ClientService clientService;
+    private UserService userService;
     
     @Override
     @RequestMapping (value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public Client findById(@PathVariable Long id) throws NotFoundException {
-    return clientService.findOneById(id);
+    public User findById(@PathVariable Long id) throws NotFoundException {
+    return userService.findOneById(id);
     }
 
     @Override
     @RequestMapping ( method = RequestMethod.GET)
     @ResponseBody
-    public List<Client> findAll() {
-    return clientService.findAll();
+    public List<User> findAll() {
+    return userService.findAll();
     }
 
     @Override
     @RequestMapping (method = RequestMethod.POST)
     @ResponseStatus (HttpStatus.CREATED)
-    public void create (@RequestBody Client client)  throws BadRequestException{
-			clientService.save (client);
+    @PreAuthorize("hasAuthority('C_USER')")
+    public void create (@RequestBody User user)  throws BadRequestException{
+			userService.save (user);
     }
 
     @Override
     @RequestMapping (value = "/{id}", method = RequestMethod.PUT)
     @ResponseBody
-    public void update (@PathVariable Long id, @RequestBody Client client) throws BadRequestException {
-    	clientService.update (id, client);
+    @PreAuthorize("hasAuthority('U_USER')")
+    public void update (@PathVariable Long id, @RequestBody User user) throws BadRequestException {
+    	userService.update (id, user);
     }
 
     @Override
     @RequestMapping (value = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
+    @PreAuthorize("hasAuthority('D_USER')")
     public void delete (@PathVariable Long id) throws BadRequestException {
-    	clientService.delete (id);
+    	userService.delete (id);
     }
     
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-	public List<Client> search(@RequestParam(required = false) String name,
+	public List<User> search(@RequestParam(required = false) String name,
 			@RequestParam(required = false) Long id,
 			@RequestParam(required = false) String firstName,
 			@RequestParam(required = false) String username,
 			@RequestParam(required = false) LocalDate creationDate,
 			@RequestParam(required = false) int numberOrdersMade) {
-		ClientCriteria criteria = new ClientCriteria(id,name, firstName, username, creationDate, numberOrdersMade);
+		UserCriteria criteria = new UserCriteria(id,name, firstName, username, creationDate, numberOrdersMade);
 		
-		return clientService.search(criteria);
+		return userService.search(criteria);
 	}
 }

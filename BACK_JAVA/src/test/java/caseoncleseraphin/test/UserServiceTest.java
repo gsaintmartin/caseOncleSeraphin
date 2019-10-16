@@ -17,8 +17,8 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import caseoncleseraphin.App;
 import caseoncleseraphin.exception.BadRequestException;
-import caseoncleseraphin.model.Client;
-import caseoncleseraphin.service.ClientService;
+import caseoncleseraphin.model.User;
+import caseoncleseraphin.service.UserService;
 
 
 
@@ -26,23 +26,23 @@ import caseoncleseraphin.service.ClientService;
 @WebAppConfiguration
 @ContextConfiguration(classes = { App.class })
 @Transactional
-public class ClientServiceTest {
+public class UserServiceTest {
     
     @Autowired
-    private ClientService clientService;
+    private UserService userService;
 
 	@Test
 	public void saveTest() {
-		Client client = new Client("Saint-Martin" , "Guillaume" , "gsaintmartin", "gsaintmartin@sfr.fr",
-				"33 rue du dudul", "067895667", "zeub" , (LocalDate.of(2019, 9, 21)));
+		User user = new User("Saint-Martin" , "Guillaume" , "gsaintmartin", "gsaintmartin@sfr.fr",
+				"33 rue du dudul", "067895667", "zeub" , (LocalDate.of(2019, 9, 21)), null);
 		try {
-			client = clientService.save(client);
-			System.out.println("Un client a été créé et il a le numéro " + client.getId());
+			user = userService.save(user);
+			System.out.println("Un client a été créé et il a le numéro " + user.getId());
 		} catch (BadRequestException e) {
 	
 			e.printStackTrace();
 		}
-		assertNotNull("Id should be set after save.", client.getId());
+		assertNotNull("Id should be set after save.", user.getId());
 	}
 	
 	

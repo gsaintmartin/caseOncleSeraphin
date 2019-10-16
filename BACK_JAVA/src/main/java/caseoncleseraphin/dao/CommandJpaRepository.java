@@ -34,7 +34,7 @@ public class CommandJpaRepository extends AbstractJpaRepository<Command> {
 			if (criteria.getState() != null) {
 				qlQuery += " and co.state like :state";
 			}
-			if (criteria.getClient() != null) {
+			if (criteria.getUser() != null) {
 				qlQuery += " and cl.id =: id";
 			}
 
@@ -52,8 +52,8 @@ public class CommandJpaRepository extends AbstractJpaRepository<Command> {
 			if (criteria.getState() != null) {
 				query.setParameter("state", criteria.getState());
 			}
-			if (criteria.getClient() != null) {
-				query.setParameter("idClient", criteria.getClient());
+			if (criteria.getUser() != null) {
+				query.setParameter("user", criteria.getUser());
 			}
 			
 		}

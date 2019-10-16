@@ -8,6 +8,6 @@ public class Main {
 	public static void main(String[] args) throws BadRequestException, NotFoundException {
 
 		Lanceur lanceur = new Lanceur();
-		lanceur.creationClient();
+		lanceur.initializeData();
 }
 }

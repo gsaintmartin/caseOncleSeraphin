@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,6 +43,7 @@ public class CategoryController extends Controller<Category> {
 	@Override
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
+	@PreAuthorize("hasAuthority('C_CATEGORY')")
 	public void create(@RequestBody Category category) throws BadRequestException {
 		categoryService.save(category);
 	}
@@ -49,6 +51,7 @@ public class CategoryController extends Controller<Category> {
 	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	@ResponseBody
+	@PreAuthorize("hasAuthority('U_CATEGORY')")
 	public void update(@PathVariable Long id, @RequestBody Category category) throws BadRequestException {
 		categoryService.update(id, category);
 	}
@@ -56,6 +59,7 @@ public class CategoryController extends Controller<Category> {
 	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	@ResponseBody
+	@PreAuthorize("hasAuthority('D_CATEGORY')")
 	public void delete(@PathVariable Long id) throws BadRequestException {
 		categoryService.delete(id);
 	}

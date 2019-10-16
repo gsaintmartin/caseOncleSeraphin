@@ -42,7 +42,7 @@ public class ProductController extends Controller<Product> {
 	}
 
 	@Override
-	@PreAuthorize("hasAuthority('CREATE_PRODUCT')")
+	@PreAuthorize("hasAuthority('C_PRODUCT')")
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public void create(@RequestBody Product product) throws BadRequestException {
@@ -52,13 +52,16 @@ public class ProductController extends Controller<Product> {
 	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	@ResponseBody
+	@PreAuthorize("hasAuthority('U_PRODUCT')")
 	public void update(@PathVariable Long id, @RequestBody Product product) throws BadRequestException {
 		productService.updateProduct(product);
 	}
 
+	
 	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	@ResponseBody
+	@PreAuthorize("hasAuthority('D_PRODUCT')")
 	public void delete(@PathVariable Long id) throws BadRequestException {
 		productService.deleteProduct(id);
 	}

@@ -9,44 +9,56 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import caseoncleseraphin.model.Client;
-import caseoncleseraphin.model.criteria.ClientCriteria;
+import caseoncleseraphin.model.User;
+import caseoncleseraphin.model.criteria.UserCriteria;
 
 @Repository
 @Transactional
-public class ClientJpaRepository extends AbstractJpaRepository<Client> {
+public class UserJpaRepository extends AbstractJpaRepository<User> {
 
-	public ClientJpaRepository() {
-		super(Client.class);
+	public UserJpaRepository() {
+		super(User.class);
+	}
+	
+	@Transactional
+	public User findByUsername(String username) {
+		
+		String qlQuery = "from User u left join fetch u.role r left join fetch r.rights where u.username = :username";
+		TypedQuery<User> query = entityManager.createQuery(qlQuery, User.class);
+		query.setParameter("username", username);
+		
+		User user = query.getSingleResult();
+		return user;
+		
 	}
 
-	public List<Client> search(ClientCriteria criteria) {
-		String qlQuery = "select p from Client cl left join fetch cl.command co";
+	public List<User> search(UserCriteria criteria) {
+		String qlQuery = "select p from User u left join fetch u.command co";
 
 		if (criteria.hasCriterias()) {
 			qlQuery += " where 1=1";
 
 			if (!StringUtils.isEmpty(criteria.getName())) {
-				qlQuery += " and cl.name like :name";
+				qlQuery += " and u.name like :name";
 			}
 			if (criteria.getId() != null) {
-				qlQuery += " and cl.id = :clientId";
+				qlQuery += " and u.id = :clientId";
 			}
 			if (criteria.getFirstName() != null) {
-				qlQuery += " and cl.firstName like :firstName";
+				qlQuery += " and u.firstName like :firstName";
 			}
 			if (criteria.getUsername() != null) {
-				qlQuery += " and cl.username like :username";
+				qlQuery += " and u.username like :username";
 			}
 			if (criteria.getCreationDate() != null) {
-				qlQuery += " and cl.creationDate = :creationDate";
+				qlQuery += " and u.creationDate = :creationDate";
 			}
 			if (criteria.getNumberOrdersMade() >= 0) {
 				qlQuery += " and co.numberOrdersMade = :numberOrdersMade";
 			}
 		}
 
-		TypedQuery<Client> query = entityManager.createQuery(qlQuery, Client.class);
+		TypedQuery<User> query = entityManager.createQuery(qlQuery, User.class);
 
 		if (criteria.hasCriterias()) {
 			if (!StringUtils.isEmpty(criteria.getName())) {
@@ -71,17 +83,17 @@ public class ClientJpaRepository extends AbstractJpaRepository<Client> {
 		return query.getResultList();
 	}
 
-	public Client findOneByUsername(String username) {
-		String qlString = "from Client cl where cl.username = :username";
-		TypedQuery<Client> query = entityManager.createQuery(qlString, Client.class);
+	public User findOneByUsername(String username) {
+		String qlString = "from User u where u.username = :username";
+		TypedQuery<User> query = entityManager.createQuery(qlString, User.class);
 		query.setParameter("username", username);
 
 		return query.getSingleResult();
 	}
 
-	public Client findOneById(Long id) {
-		String qlString = "from Client cl where cl.id = :id";
-		TypedQuery<Client> query = entityManager.createQuery(qlString, Client.class);
+	public User findOneById(Long id) {
+		String qlString = "from User u where u.id = :id";
+		TypedQuery<User> query = entityManager.createQuery(qlString, User.class);
 		query.setParameter("id", id);
 
 		return query.getSingleResult();

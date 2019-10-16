@@ -8,20 +8,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "client")
-public class Client implements IdEntity {
+@Table(name = "user_")
+public class User implements IdEntity {
 
-	
-	@OneToMany(mappedBy="client")
+	@OneToMany(mappedBy="user")
 	private List <Contact> listContacts;
 	
-	
+	@ManyToOne
+	private Role role;
 
-	@OneToMany(mappedBy="client")
+	@OneToMany(mappedBy="user")
 	private List <Command> listCommands;
 
 	private static final long serialVersionUID = 4030989545851358176L;
@@ -37,13 +38,14 @@ public class Client implements IdEntity {
 	private String phone;
 	private String password;
 	private LocalDate creationDate;
+	
 
-	public Client() {
+	public User() {
 		super();
 	}
 
-	public Client(String name, String firstName, String username, String email, String adress, String phone,
-			String password, LocalDate creationDate) {
+	public User(String name, String firstName, String username, String email, String adress, String phone,
+			String password, LocalDate creationDate, Role role) {
 		super();
 
 		this.name = name;
@@ -54,6 +56,7 @@ public class Client implements IdEntity {
 		this.phone = phone;
 		this.password = password;
 		this.creationDate = creationDate;
+		this.role = role;
 	}
 
 	public Long getId() {
@@ -145,6 +148,15 @@ public class Client implements IdEntity {
 	public void setListContacts(List<Contact> listContacts) {
 		this.listContacts = listContacts;
 	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+	
 	
 
 	

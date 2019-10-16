@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import caseoncleseraphin.exception.BadRequestException;
 import caseoncleseraphin.exception.NotFoundException;
-import caseoncleseraphin.model.Client;
+import caseoncleseraphin.model.User;
 import caseoncleseraphin.model.Command;
 import caseoncleseraphin.model.CommandState;
 import caseoncleseraphin.model.criteria.CommandCriteria;
@@ -62,7 +62,7 @@ public class CommandController extends Controller<Command> {
 	public List<Command> search(@RequestParam(required = false)  Long commandReference,
 			@RequestParam(required = false) LocalDate commandDate,
 			@RequestParam(required = false) CommandState state,
-			@RequestParam(required = false) Client client) {
+			@RequestParam(required = false) User client) {
 		CommandCriteria criteria = new CommandCriteria(commandReference,commandDate, state, client);
 		
 		return commandService.search(criteria);

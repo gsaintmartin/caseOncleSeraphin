@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import org.springframework.util.StringUtils;
 
-public class ClientCriteria {
+public class UserCriteria {
 	private Long id;
 	private String name;
 	private String firstName;
@@ -12,7 +12,7 @@ public class ClientCriteria {
 	private LocalDate creationDate;
 	private int numberOrdersMade;
 	
-	public ClientCriteria(Long id, String name, String firstName, String username, LocalDate creationDate,
+	public UserCriteria(Long id, String name, String firstName, String username, LocalDate creationDate,
 			int numberOrdersMade) {
 		super();
 		this.id = id;

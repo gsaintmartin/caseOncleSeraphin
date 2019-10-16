@@ -9,63 +9,71 @@ import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import caseoncleseraphin.dao.ClientJpaRepository;
+import caseoncleseraphin.dao.UserJpaRepository;
 import caseoncleseraphin.exception.BadRequestException;
 import caseoncleseraphin.exception.NotFoundException;
-import caseoncleseraphin.model.Client;
-import caseoncleseraphin.model.criteria.ClientCriteria;
+import caseoncleseraphin.model.User;
+import caseoncleseraphin.model.criteria.UserCriteria;
 
 @Service
 @Transactional
-public class ClientService {
+public class UserService {
 
 	@Autowired
-	@Qualifier("clientJpaRepository")
-	private ClientJpaRepository clientJpaRepository;
+	@Qualifier("userJpaRepository")
+	private UserJpaRepository userJpaRepository;
 
-	public Client findOneById(Long id) throws NotFoundException {
+	public User findOneById(Long id) throws NotFoundException {
 		try {
-			return clientJpaRepository.findOneById(id);
+			return userJpaRepository.findOneById(id);
 		} catch (InvalidDataAccessApiUsageException e) {
-			throw new NotFoundException("Le client dont l'id est " + id + " n'existe pas", e);
+			throw new NotFoundException("L'utilisateur dont l'id est " + id + " n'existe pas", e);
 		}
 
 	}
+	
+	public User findByUsername(String username) {
+		
+		return userJpaRepository.findByUsername(username);
+		
+	}
+	
+	
 
-	public Client findOneByUsername(String username) {
-		return clientJpaRepository.findOneByUsername(username);
+	public User findOneByUsername(String username) {
+		return userJpaRepository.findOneByUsername(username);
 	}
 
-	public List<Client> findAll() {
-		return clientJpaRepository.findAll();
+	public List<User> findAll() {
+		return userJpaRepository.findAll();
 	}
 
-	public Client save(Client client) throws BadRequestException {
+	public User save(User user) throws BadRequestException {
 		try {
-			return clientJpaRepository.save(client);
+			return userJpaRepository.save(user);
 		} catch (InvalidDataAccessApiUsageException e) {
-			throw new BadRequestException("Le client n'a pas été créé", e);
+			throw new BadRequestException("L'utilisateur n'a pas été créé", e);
 		}
 	}
 
-	public Client update(Long id, Client client) throws BadRequestException {
+	public User update(Long id, User user) throws BadRequestException {
 		try {
-			return clientJpaRepository.update(client);
+			return userJpaRepository.update(user);
 		} catch (InvalidDataAccessApiUsageException e) {
 			throw new BadRequestException("Le client n'a pas été mis à jour", e);
 		}
 
 	}
 
-	public Client delete(Long id) throws BadRequestException {
+	public User delete(Long id) throws BadRequestException {
 		try {
-			return clientJpaRepository.delete(id);
+			return userJpaRepository.delete(id);
 		} catch (InvalidDataAccessApiUsageException e) {
 			throw new BadRequestException("Le client n'a pas été supprimé", e);
 		}
 
 	}
-	public List<Client> search(ClientCriteria criteria) {
-		return clientJpaRepository.search(criteria);
+	public List<User> search(UserCriteria criteria) {
+		return userJpaRepository.search(criteria);
 	}
 }

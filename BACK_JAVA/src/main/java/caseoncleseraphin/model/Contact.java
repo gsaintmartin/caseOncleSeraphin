@@ -17,7 +17,7 @@ public class Contact implements IdEntity {
 	private static final long serialVersionUID = 8084591760039946118L;
 
 	@ManyToOne
-	private Client client;
+	private User user;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,16 +43,20 @@ public class Contact implements IdEntity {
 		this.message = message;
 	}
 
-	public void sendMessage() {
-
-	}
-
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }
