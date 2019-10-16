@@ -27,6 +27,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'index', component: HomeComponent },
   { path: 'cart', component: CartComponent },
   { path: 'category_agricoles', component: CategoryAgricolesComponent },
