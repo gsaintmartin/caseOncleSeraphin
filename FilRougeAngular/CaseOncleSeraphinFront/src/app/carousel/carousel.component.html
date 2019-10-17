@@ -1,14 +1,14 @@
-<div class="container col-lg-12">
+<div class="container col-lg-12 col-md-12 col-sm-12">
 
   <div class="row">
-    <div class="col-md-12 py-3">
+    <div class="col-md-12 col-sm-12 py-3">
       <h2 class="pb-2">Notre sélection</h2>
       <ngb-carousel *ngIf="eventList">
         <ng-template ngbSlide *ngFor="let event of eventList">
           <img [src]="event.img" alt="Random slide">
           <div class="carousel-caption">
             <h3>{{ event.eventLocation }}</h3>
-            <p [innerText]="event.eventDescription"></p>
+            <!-- <p [innerText]="event.eventDescription"></p> -->
             <button routerLink="/urlVersLaNouvellePage" class="site-btn">Commander</button>
           </div>
         </ng-template>

@@ -12,7 +12,15 @@ export class NavbarCustomerComponent implements OnInit {
 
   constructor(private modalService: NgbModal, public loginService: AuthenticationService) { }
 
+  navbarOpen = false;
+
   ngOnInit() {
+  }
+
+  toggleNavbar() {
+
+this.navbarOpen = !this.navbarOpen;
+
   }
   openModal() {
     const modalRef = this.modalService.open(LoginComponent);
