@@ -9,7 +9,7 @@
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
-
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 html,
 body {
 	height: 100%;

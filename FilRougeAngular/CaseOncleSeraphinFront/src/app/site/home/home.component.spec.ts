@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
-import { CarouselConfigComponent } from 'src/app/layout/carousel-config/carousel-config.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
