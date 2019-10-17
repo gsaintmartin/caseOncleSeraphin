@@ -3,14 +3,10 @@ package caseoncleseraphin;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
-import javax.management.relation.RoleResult;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
-
 import caseoncleseraphin.exception.BadRequestException;
 import caseoncleseraphin.model.Right;
 import caseoncleseraphin.model.Role;
@@ -23,10 +19,10 @@ import javassist.NotFoundException;
 @Component
 public class Lanceur {
 	@Autowired
-	UserService userService;
+	private UserService userService;
 	
 	@Autowired
-	RightService rightService;
+	private RightService rightService;
 
 	
 	@Autowired
@@ -119,8 +115,8 @@ public class Lanceur {
 			}
 			
 			//Creation des clients
-			User client1 = new User("Duce", "J-C", "jcduce", "jcduce@gmail.com", "8 rue de la resistance",
-					"0699842136", "azert8", (LocalDate.of(2019, 9, 24)), roleCustomer);
+			User client1 = new User("Duce", "J-C", "jcduce", "jcduce@gmail.com", "11 rue de la resistance",
+					"0699842137", "azerty", (LocalDate.of(2019, 9, 24)), roleCustomer);
 
 			try {
 				userService.findOneByUsername("jcduce");
