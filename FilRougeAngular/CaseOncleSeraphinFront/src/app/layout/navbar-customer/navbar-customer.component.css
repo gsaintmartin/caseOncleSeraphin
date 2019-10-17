@@ -79,6 +79,18 @@ textarea:focus {
 	outline: none;
 }
 
+.navbar-brand{
+margin-left: 20%;
+
+}
+
+.nav-link{
+color: navajowhite;
+
+
+
+}
+
 a:hover,
 a:focus {
 	text-decoration: none;
@@ -2266,6 +2278,10 @@ ol {
 /* Medium screen : 992px. */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .site-logo {
+    margin-bottom: 20px;
+    max-width: 50%;
+	}
 	.hero-slider .slider-nav-warp {
 		max-width: 930px;
 	}
@@ -2280,8 +2296,11 @@ ol {
 /* Tablet :768px. */
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+
 	.site-logo {
-		margin-bottom: 20px;
+    margin-bottom: 20px;
+    max-width: 50%;
 	}
 	.header-search-form {
 		margin-bottom: 15px;
@@ -2340,7 +2359,8 @@ ol {
 
 @media only screen and (max-width: 767px) {
 	.site-logo {
-		margin-bottom: 20px;
+    margin-bottom: 20px;
+    max-width: 50%;
 	}
 	.header-search-form {
 		margin-bottom: 15px;
@@ -2427,6 +2447,10 @@ ol {
 /* Medium Mobile :480px. */
 
 @media only screen and (min-width: 576px) and (max-width: 766px) {
+  .site-logo {
+    margin-bottom: 20px;
+    max-width: 50%;
+	}
 	.hero-slider .slider-nav-warp {
 		padding: 0 15px;
 	}
@@ -2442,6 +2466,10 @@ ol {
 /* Small Mobile :320px. */
 
 @media only screen and (max-width: 479px) {
+  .site-logo {
+    margin-bottom: 20px;
+    max-width: 50%;
+	}
 	.hero-slider .slider-nav-warp {
 		max-width: 510px;
 		padding: 0 15px;
@@ -2484,5 +2512,7 @@ ol {
 	.connect {
 
 		padding: 0px;
-	}
+  }
+
+
 }

@@ -20,7 +20,7 @@ export class CarouselComponent implements OnInit {
       event: ' Event 2',
       eventLocation: 'FLOR DE CANA 18 ans 40%',
       // tslint:disable-next-line: max-line-length
-      eventDescription: 'Le 31 juillet 1970, une coutume vieille de 300 ans prenait fin. ',
+      eventDescription: ' ',
       img: 'assets/images/bottles/CARROUSSEL/flor-de-cana-18.jpg',
 
     },
@@ -28,7 +28,7 @@ export class CarouselComponent implements OnInit {
       event: ' Event 3',
       eventLocation: 'SAVANNA 15 ans 1999 Millenium 43%',
       // tslint:disable-next-line: max-line-length
-      eventDescription: 'Le 31 juillet 1970, une coutume vieille de 300 ans prenait fin. ',
+      eventDescription: '',
       img: 'assets/images/bottles/CARROUSSEL/savanna.jpg',
 
     },
