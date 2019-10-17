@@ -30,18 +30,19 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AuthGuardService} from './service/auth-guard.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'index', component: HomeComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', canActivate:[AuthGuardService], component: CartComponent },
   { path: 'category_agricoles', component: CategoryAgricolesComponent },
   { path: 'category_all', component: CategoryAllComponent },
   { path: 'category_blancs', component: CategoryBlancsComponent },
   { path: 'category_vieux', component: CategoryVieuxComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'page_admin', component: PageAdminComponent },
+  { path: 'page_admin', canActivate:[AuthGuardService], component: PageAdminComponent },
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -72,7 +73,7 @@ const appRoutes: Routes = [
     HomeComponent,
     CarouselComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
