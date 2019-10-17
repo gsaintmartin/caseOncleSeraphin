@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -77,5 +78,13 @@ public class UserController extends Controller<User> {
 		UserCriteria criteria = new UserCriteria(id,name, firstName, username, creationDate, numberOrdersMade);
 		
 		return userService.search(criteria);
+	}
+    
+    //In the controller we define another REST API for returning the user object.
+    
+    @GetMapping(produces = "application/json")
+	@RequestMapping({ "/validateLogin" })
+	public User validateLogin() {
+		return new User("User successfully authenticated");
 	}
 }
