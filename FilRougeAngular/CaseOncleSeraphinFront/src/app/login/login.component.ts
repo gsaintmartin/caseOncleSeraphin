@@ -10,7 +10,7 @@ import { AuthenticationService } from '../service/authentication.service';
 })
 export class LoginComponent implements OnInit {
   username = 'bibiphoque34';
-  password = '';
+  password = 'password';
   invalidLogin = false;
 
   loginInfo: LoginInfo = new LoginInfo();
