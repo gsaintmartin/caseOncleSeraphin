@@ -31,6 +31,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'index', component: HomeComponent },
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
+
   // { path: 'auth', component: AuthComponent },
   // { path: 'appareils/:id', canActivate : [AuthGuard], component: SingleAppareilComponent },
   { path: 'not-found', component: Erreur404Component },
