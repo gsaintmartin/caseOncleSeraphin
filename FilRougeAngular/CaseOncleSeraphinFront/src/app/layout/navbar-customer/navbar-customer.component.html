@@ -23,7 +23,7 @@
               <a   class="connect btn btn-default btn-rounded waves-effect waves-light"
                 data-toggle="modal" data-target="#elegantModalForm" *ngIf="!loginService.isUserLoggedIn()" (click)="openModal()">Se connecter</a>
               <a *ngIf="!loginService.isUserLoggedIn()" routerLink="register">Créer un compte</a>
-              <a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a>
+              <a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Se déconnecter</a>
             </div>
             <div class="up-item">
               <div class="shopping-card">
