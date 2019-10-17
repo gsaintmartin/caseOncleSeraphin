@@ -4,27 +4,27 @@ import java.time.LocalDate;
 
 import org.springframework.util.StringUtils;
 
-import caseoncleseraphin.model.Client;
+import caseoncleseraphin.model.User;
 import caseoncleseraphin.model.CommandState;
 
 public class CommandCriteria {
 	private Long commandReference;
 	private LocalDate commandDate;
 	private CommandState state;
-	private Client client;
+	private User user;
 
 	
-	public CommandCriteria(Long commandReference, LocalDate commandDate, CommandState state, Client client) {
+	public CommandCriteria(Long commandReference, LocalDate commandDate, CommandState state, User user) {
 		super();
 		this.commandReference = commandReference;
 		this.commandDate = commandDate;
 		this.state = state;
-		this.client = client;
+		this.user = user;
 	}
 
 	
 	public boolean hasCriterias() {
-		return !StringUtils.isEmpty(commandReference) || commandDate != null  || state != null || client != null;
+		return !StringUtils.isEmpty(commandReference) || commandDate != null  || state != null || user != null;
 	}
 
 
@@ -58,13 +58,13 @@ public class CommandCriteria {
 	}
 
 
-	public Client getClient() {
-		return client;
+	public User getUser() {
+		return user;
 	}
 
 
-	public void setClient(Client client) {
-		this.client = client;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 

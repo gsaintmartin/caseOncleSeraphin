@@ -17,10 +17,10 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import caseoncleseraphin.App;
 import caseoncleseraphin.exception.BadRequestException;
+import caseoncleseraphin.exception.NotFoundException;
 import caseoncleseraphin.model.Command;
 import caseoncleseraphin.model.CommandState;
 import caseoncleseraphin.service.CommandService;
-import javassist.NotFoundException;
 
 
 

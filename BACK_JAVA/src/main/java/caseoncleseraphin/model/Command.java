@@ -1,6 +1,5 @@
 package caseoncleseraphin.model;
 
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -20,47 +19,40 @@ import javax.persistence.Table;
 @Table(name = "command")
 public class Command implements IdEntity {
 
-
-	
 	private static final long serialVersionUID = 5437908641536653640L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long commandReference;
 
-	
 	private LocalDate commandDate;
 	@Enumerated(EnumType.STRING)
 	private CommandState state;
-	
-	@ManyToOne
-	private Client client;
-	
-	@OneToMany(mappedBy="command")
-	private List <CommandLine> listCommandLines;
 
-	
+	@ManyToOne
+	private User user;
+
+	@OneToMany(mappedBy = "command")
+	private List<CommandLine> listCommandLines;
 
 	public Command() {
 		super();
 	}
 
-	
-
 	public Command(LocalDate commandDate, CommandState state) {
 		super();
-		
+
 		this.commandDate = commandDate;
 		this.state = state;
-		
+
 	}
 
 //getters and setters
-	public Client getClient() {
-		return client;
+	public User getUser() {
+		return user;
 	}
 
-	public void setClient(Client client) {
-		this.client = client;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Long getCommandReference() {
@@ -87,7 +79,6 @@ public class Command implements IdEntity {
 		this.state = state;
 	}
 
-
 	public List<CommandLine> getListCommandLines() {
 		return listCommandLines;
 	}
@@ -103,6 +94,5 @@ public class Command implements IdEntity {
 	public void setId(Long id) {
 		this.commandReference = id;
 	}
-	
 
 }

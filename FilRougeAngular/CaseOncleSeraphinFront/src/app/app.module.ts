@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -22,26 +26,31 @@ import { Erreur404Component } from './site/erreur404/erreur404.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { HomeComponent } from './site/home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
-
-
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'index', component: HomeComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'category-agricoles', component: CategoryAgricolesComponent },
-  { path: 'category-all', component: CategoryAllComponent },
-  { path: 'category-blancs', component: CategoryBlancsComponent },
-  { path: 'category-vieux', component: CategoryVieuxComponent },
+  { path: 'category_agricoles', component: CategoryAgricolesComponent },
+  { path: 'category_all', component: CategoryAllComponent },
+  { path: 'category_blancs', component: CategoryBlancsComponent },
+  { path: 'category_vieux', component: CategoryVieuxComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'page-admin', component: PageAdminComponent },
+  { path: 'page_admin', component: PageAdminComponent },
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   // { path: 'auth', component: AuthComponent },
   // { path: 'appareils/:id', canActivate : [AuthGuard], component: SingleAppareilComponent },
   { path: 'not-found', component: Erreur404Component },
   { path: '**', redirectTo: '/not-found' }
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,13 +69,18 @@ const appRoutes: Routes = [
     NavbarCustomerComponent,
     Erreur404Component,
     HomeComponent,
-    CarouselComponent
+    CarouselComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     NgbModule,
 
+    CarouselModule.forRoot(),
+    NgbModule,
+    FormsModule
   ],
   providers: [
     {
@@ -75,6 +89,7 @@ const appRoutes: Routes = [
   ],
   bootstrap: [
     AppComponent
-  ]
+  ],
+  entryComponents: [NavbarCustomerComponent]
 })
 export class AppModule { }
