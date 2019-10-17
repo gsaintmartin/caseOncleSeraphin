@@ -1,6 +1,5 @@
 package caseoncleseraphin.model;
 
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -16,14 +15,14 @@ import javax.persistence.Table;
 @Table(name = "user_")
 public class User implements IdEntity {
 
-	@OneToMany(mappedBy="user")
-	private List <Contact> listContacts;
-	
+	@OneToMany(mappedBy = "user")
+	private List<Contact> listContacts;
+
 	@ManyToOne
 	private Role role;
 
-	@OneToMany(mappedBy="user")
-	private List <Command> listCommands;
+	@OneToMany(mappedBy = "user")
+	private List<Command> listCommands;
 
 	private static final long serialVersionUID = 4030989545851358176L;
 	@Id
@@ -33,15 +32,21 @@ public class User implements IdEntity {
 	private String firstName;
 	private String username;
 
-	private String email; 
+	private String email;
 	private String adress;
 	private String phone;
 	private String password;
 	private LocalDate creationDate;
-	
+
+	private String status;
 
 	public User() {
 		super();
+	}
+	
+	//constructeur pour 
+	public User(String status) {
+		this.status = status;
 	}
 
 	public User(String name, String firstName, String username, String email, String adress, String phone,
@@ -57,6 +62,14 @@ public class User implements IdEntity {
 		this.password = password;
 		this.creationDate = creationDate;
 		this.role = role;
+	}
+	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public Long getId() {
@@ -131,8 +144,6 @@ public class User implements IdEntity {
 		this.creationDate = creationDate;
 	}
 
-	
-
 	public List<Command> getListCommands() {
 		return listCommands;
 	}
@@ -140,7 +151,7 @@ public class User implements IdEntity {
 	public void setListCommands(List<Command> listCommands) {
 		this.listCommands = listCommands;
 	}
-	
+
 	public List<Contact> getListContacts() {
 		return listContacts;
 	}
@@ -156,11 +167,5 @@ public class User implements IdEntity {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
-	
-
-	
-	
-		
 
 }
