@@ -1,5 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+<<<<<<< HEAD
+=======
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+>>>>>>> df229b9bd925a62ca5142aa2c8f12d7b3747f6f3
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FormsModule } from '@angular/forms';
@@ -75,6 +82,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     NgbModule,
+    HttpClientModule,
 
     CarouselModule.forRoot(),
     NgbModule,

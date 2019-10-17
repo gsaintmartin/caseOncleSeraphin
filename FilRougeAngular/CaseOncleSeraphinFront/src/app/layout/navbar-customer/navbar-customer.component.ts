@@ -10,6 +10,8 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
 })
 export class NavbarCustomerComponent implements OnInit {
 
+
+
   constructor(private modalService: NgbModal, public loginService: AuthenticationService) { }
 
   navbarOpen = false;
@@ -30,5 +32,7 @@ this.navbarOpen = !this.navbarOpen;
       }
     });
   }
-  }
+
+
+}
 
