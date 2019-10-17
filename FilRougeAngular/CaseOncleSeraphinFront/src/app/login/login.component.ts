@@ -9,13 +9,14 @@ import { AuthenticationService } from '../service/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username = 'bibiphoque34'
-  password = ''
-  invalidLogin = false
+  username = 'bibiphoque34';
+  password = '';
+  invalidLogin = false;
 
   loginInfo: LoginInfo = new LoginInfo();
 
   constructor(private activeModalService: NgbActiveModal,
+    // tslint:disable-next-line: align
     private loginservice: AuthenticationService) { }
 
   ngOnInit() {
@@ -31,8 +32,9 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     if (this.loginservice.authenticate(this.username, this.password)
     ) {
-      this.invalidLogin = false
-    } else
-      this.invalidLogin = true
+      this.invalidLogin = false;
+    } else {
+       this.invalidLogin = true;
+    }
   }
 }
