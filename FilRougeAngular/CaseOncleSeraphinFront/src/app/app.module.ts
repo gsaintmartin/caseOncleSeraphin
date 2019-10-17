@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -20,8 +21,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { Erreur404Component } from './site/erreur404/erreur404.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { HomeComponent } from './site/home/home.component';
-import { CarouselConfigComponent } from './layout/carousel-config/carousel-config.component';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { CarouselComponent } from './carousel/carousel.component';
+
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -58,12 +60,12 @@ const appRoutes: Routes = [
     NavbarCustomerComponent,
     Erreur404Component,
     HomeComponent,
-    CarouselConfigComponent
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    CarouselModule.forRoot()
+    NgbModule,
 
   ],
   providers: [
