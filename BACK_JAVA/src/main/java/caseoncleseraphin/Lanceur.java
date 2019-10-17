@@ -43,7 +43,6 @@ public class Lanceur {
 			rightService.save(updateCommand);
 			Right deleteCommand = new Right("D_COMMAND");
 			rightService.save(deleteCommand);
-			
 			Right createProduct = new Right("C_PRODUCT");
 			rightService.save(createProduct);
 			Right updateProduct = new Right("U_PRODUCT");
@@ -102,8 +101,15 @@ public class Lanceur {
 	
 	
 	@PostConstruct
-	public void testDataBase() {
+	public void testDataBaseAdmin1() {
 	User serverUser = userService.findByUsername("jcduce");
+	
+	System.out.println(serverUser.getName());
+	
+	}
+	@PostConstruct
+	public void testDataBaseClient1() {
+	User serverUser = userService.findByUsername("bdeeljore");
 	
 	System.out.println(serverUser.getName());
 	
