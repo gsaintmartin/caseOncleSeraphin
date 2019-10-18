@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginInfo } from '../login-info';
 import { AuthenticationService } from '../service/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   loginInfo: LoginInfo = new LoginInfo();
 
-  constructor(private activeModalService: NgbActiveModal,
+  constructor(private router: Router, private activeModalService: NgbActiveModal,
     // tslint:disable-next-line: align
     private loginservice: AuthenticationService) { }
 
@@ -30,12 +31,16 @@ export class LoginComponent implements OnInit {
     this.activeModalService.close();
   }
   checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)
-    ) {
-      this.invalidLogin = false;
+    (this.loginservice.authenticate(this.username, this.password).subscribe(
+      data => {
+        this.router.navigate(['']);
+        this.invalidLogin = false;
+      },
+      error => {
+        this.invalidLogin = true;
 
-    } else {
-       this.invalidLogin = true;
-    }
+      }
+    )
+    );
   }
 }

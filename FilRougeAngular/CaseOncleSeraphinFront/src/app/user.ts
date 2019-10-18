@@ -1,3 +1,5 @@
+
+
 import { Role } from './role';
 import { LinkedList } from 'ngx-bootstrap/utils/public_api';
 import { Command } from 'selenium-webdriver';
@@ -29,4 +31,8 @@ listContacts: LinkedList<Contact>;
   this.creationDate = creationDate;
   this.role = role;
 }
+   constructor(
+    public status: string,
+     ) {}
+
 }
