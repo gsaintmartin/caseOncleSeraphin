@@ -57,7 +57,7 @@ import { TaxesComponent } from './site/page-admin2/taxes/taxes.component';
 import { TransactionsComponent } from './site/page-admin2/transactions/transactions.component';
 import { TranslationsComponent } from './site/page-admin2/translations/translations.component';
 import { UserListComponent } from './site/page-admin2/user-list/user-list.component';
-import { IndexAdminComponent } from './site/page-admin2/index-admin/index-admin.component';
+import { IndexComponent } from './site/page-admin2/index/index.component';
 
 
 const appRoutes: Routes = [
@@ -75,8 +75,6 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
-
-
   { path: 'add_digital_product', component: AddDigitalProductComponent },
   { path: 'add_product', component: AddProductComponent },
   { path: 'category', component: CategoryComponent },
@@ -99,7 +97,8 @@ const appRoutes: Routes = [
   { path: 'transactions', component: TransactionsComponent },
   { path: 'translations', component: TranslationsComponent },
   { path: 'user_list', component: UserListComponent },
-  // { path: 'index_admin', component: IndexAdminComponent },
+  { path: 'index', component: IndexComponent },
+
 
   { path: 'not-found', component: Erreur404Component },
   { path: '**', redirectTo: '/not-found' },
@@ -157,7 +156,7 @@ const appRoutes: Routes = [
      TransactionsComponent,
      TranslationsComponent,
      UserListComponent,
-    //  IndexAdminComponent,
+     IndexComponent,
 
   ],
   imports: [
