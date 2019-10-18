@@ -76,8 +76,6 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'not-found', component: Erreur404Component },
-  { path: '**', redirectTo: '/not-found' },
 
   // { path: 'add_digital_product', component: AddDigitalProductComponent },
   // { path: 'add_product', component: AddProductComponent },
