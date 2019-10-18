@@ -174,7 +174,7 @@ ol {
 	font-size: 14px;
 	font-weight: 600;
 	min-width: 167px;
-	padding: 18px 47px 14px;
+  padding: 5px 15px 10px;
 	border-radius: 50px;
 	text-transform: uppercase;
 	background: sandybrown;
@@ -909,7 +909,8 @@ ol {
 }
 
 .product-item .pi-links a {
-	display: inline-table;
+  display: inline-table;
+  background: navajowhite;
 	width: 36px;
 	height: 36px;
 	border-radius: 60px;
