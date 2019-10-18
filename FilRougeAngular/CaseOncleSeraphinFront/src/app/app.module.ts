@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CartComponent } from './site/cart/cart.component';
@@ -26,26 +28,29 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+
 import { AnimateComponentComponent } from './animate-component/animate-component.component';
 import { ProductSliderComponent } from './product-slider/product-slider.component';
+
+import { AuthGuardService} from './service/auth-guard.service';
+
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'index', component: HomeComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', canActivate: [AuthGuardService], component: CartComponent },
   { path: 'category_agricoles', component: CategoryAgricolesComponent },
   { path: 'category_all', component: CategoryAllComponent },
   { path: 'category_blancs', component: CategoryBlancsComponent },
   { path: 'category_vieux', component: CategoryVieuxComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'page_admin', component: PageAdminComponent },
+  { path: 'page_admin', canActivate: [AuthGuardService], component: PageAdminComponent },
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
-  // { path: 'auth', component: AuthComponent },
-  // { path: 'appareils/:id', canActivate : [AuthGuard], component: SingleAppareilComponent },
   { path: 'not-found', component: Erreur404Component },
   { path: '**', redirectTo: '/not-found' }
 ];
@@ -71,8 +76,10 @@ const appRoutes: Routes = [
     CarouselComponent,
     LoginComponent,
     LogoutComponent,
+
     AnimateComponentComponent,
     ProductSliderComponent
+
   ],
   imports: [
     BrowserModule,

@@ -9,8 +9,8 @@ import { AuthenticationService } from '../service/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username = 'bibiphoque34';
-  password = 'password';
+  username = '';
+  password = '';
   invalidLogin = false;
 
   loginInfo: LoginInfo = new LoginInfo();
@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
     if (this.loginservice.authenticate(this.username, this.password)
     ) {
       this.invalidLogin = false;
+
     } else {
        this.invalidLogin = true;
     }

@@ -11,12 +11,12 @@
   <div class="modal-body mx-4">
     <!--Body-->
     <div class="md-form mb-5">
-      <input type="email" id="Form-email1" class="form-control validate" [(ngModel)]="loginInfo.login">
+      <input type="email" id="Form-email1" class="form-control validate" [(ngModel)]="username" [ngModelOptions]="{standalone : true}">
       <label data-error="wrong" data-success="right" for="Form-email1">email</label>
     </div>
 
     <div class="md-form pb-3">
-      <input type="password" id="Form-pass1" class="form-control validate" [(ngModel)]="loginInfo.password">
+      <input type="password" id="Form-pass1" class="form-control validate" [(ngModel)]="password" [ngModelOptions]="{standalone : true}">
       <label data-error="wrong" data-success="right" for="Form-pass1">mot de passe</label>
       <p class="font-small blue-text d-flex justify-content-end">Mot de passe<a href="forgot-password.html"
           class=" ml-1">

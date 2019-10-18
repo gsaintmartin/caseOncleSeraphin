@@ -1,4 +1,4 @@
 export class LoginInfo {
-  login: string;
-  password: string;
+  static password: string;
+  static login: string;
 }
