@@ -2,11 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
-
 import { CartComponent } from './site/cart/cart.component';
 import { CategoryAgricolesComponent } from './site/category-agricoles/category-agricoles.component';
 import { CategoryAllComponent } from './site/category-all/category-all.component';
@@ -28,6 +26,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AnimateComponentComponent } from './animate-component/animate-component.component';
+import { ProductSliderComponent } from './product-slider/product-slider.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -70,17 +70,21 @@ const appRoutes: Routes = [
     HomeComponent,
     CarouselComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    AnimateComponentComponent,
+    ProductSliderComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     NgbModule,
     HttpClientModule,
-
+    BrowserModule,
+    BrowserAnimationsModule,
     CarouselModule.forRoot(),
     NgbModule,
-    FormsModule
+    FormsModule,
+
   ],
   providers: [
     {
