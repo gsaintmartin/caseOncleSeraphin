@@ -1,0 +1,29 @@
+.form-control .form-control-user {
+  width: 100%;
+  height: 44px;
+  border: none;
+  padding: 0 18px;
+  background: #f0f0f0;
+  border-radius: 40px;
+  margin-bottom: 17px;
+  font-size: 14px;
+}
+
+.bg-form-zone{
+
+background-color: navajowhite;
+
+}
+
+.bg-register-image {
+  background: url("https://image.noelshack.com/fichiers/2019/34/4/1566461681-register-picture.jpg");
+
+  background-position: center;
+  background-size: cover;
+}
+
+.registerBg{
+
+  background-image: url("/Users/guillaumesaintmartin/Desktop/caseOncleSeraphin/caseOncleSeraphin/FilRougeAngular/CaseOncleSeraphinFront/src/assets/images/rhum-bg.jpeg");
+
+}
