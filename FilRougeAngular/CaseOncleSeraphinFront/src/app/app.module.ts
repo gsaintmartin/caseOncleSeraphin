@@ -33,7 +33,6 @@ import { ProductSliderComponent } from './product-slider/product-slider.componen
 import { AuthGuardService} from './service/auth-guard.service';
 
 import { AddDigitalProductComponent } from './site/page-admin2/add-digital-product/add-digital-product.component';
-
 import { AddProductComponent } from './site/page-admin2/add-product/add-product.component';
 import { CategoryComponent } from './site/page-admin2/category/category.component';
 import { CategoryDigitalComponent } from './site/page-admin2/category-digital/category-digital.component';
