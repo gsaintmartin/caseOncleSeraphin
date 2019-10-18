@@ -34,9 +34,10 @@ public class CommandLine implements IdEntity{
 		super();
 	}
 
-	public CommandLine(int quantity) {
+	public CommandLine(int quantity, Product product) {
 		super();
 		this.quantity = quantity;
+		this.product = product;
 	}
 
 	public int getQuantity() {
