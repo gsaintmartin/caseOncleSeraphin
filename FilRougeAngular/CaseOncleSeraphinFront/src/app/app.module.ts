@@ -57,7 +57,9 @@ import { TaxesComponent } from './site/page-admin2/taxes/taxes.component';
 import { TransactionsComponent } from './site/page-admin2/transactions/transactions.component';
 import { TranslationsComponent } from './site/page-admin2/translations/translations.component';
 import { UserListComponent } from './site/page-admin2/user-list/user-list.component';
-import { IndexComponent } from './site/page-admin2/index/index.component';
+import { AdminIndexComponent } from './site/page-admin2/admin-index/admin-index.component';
+
+// import { IndexComponent } from './site/page-admin2/index/index.component';
 
 
 const appRoutes: Routes = [
@@ -97,7 +99,8 @@ const appRoutes: Routes = [
   { path: 'transactions', component: TransactionsComponent },
   { path: 'translations', component: TranslationsComponent },
   { path: 'user_list', component: UserListComponent },
-  { path: 'index', component: IndexComponent },
+  { path: 'admin-index', component: AdminIndexComponent },
+  // { path: 'index', component: IndexComponent },
 
 
   { path: 'not-found', component: Erreur404Component },
@@ -129,34 +132,35 @@ const appRoutes: Routes = [
     AnimateComponentComponent,
     ProductSliderComponent,
 
-     AddDigitalProductComponent,
-     AnimateComponentComponent,
-     AddProductComponent,
-     ProductSliderComponent,
-     CategoryComponent,
-     CategoryDigitalComponent,
-     CategoryDigitalsubComponent,
-     CouponCreateComponent,
-     CouponListComponent,
-     CreateMenuComponent,
-     CreateUserComponent,
-     CreateVendorsComponent,
-     CurrencyRatesComponent,
-     InvoiceComponent,
-     MediaComponent,
-     OrderComponent,
-     PageCreateComponent,
-     PagesListComponent,
-     ProductDetailComponent,
-     ProductListComponent,
-     ProductListdigitalComponent,
-     ProfileComponent,
-     ReportsComponent,
-     TaxesComponent,
-     TransactionsComponent,
-     TranslationsComponent,
-     UserListComponent,
-     IndexComponent,
+    AddDigitalProductComponent,
+    AnimateComponentComponent,
+    AddProductComponent,
+    ProductSliderComponent,
+    CategoryComponent,
+    CategoryDigitalComponent,
+    CategoryDigitalsubComponent,
+    CouponCreateComponent,
+    CouponListComponent,
+    CreateMenuComponent,
+    CreateUserComponent,
+    CreateVendorsComponent,
+    CurrencyRatesComponent,
+    InvoiceComponent,
+    MediaComponent,
+    OrderComponent,
+    PageCreateComponent,
+    PagesListComponent,
+    ProductDetailComponent,
+    ProductListComponent,
+    ProductListdigitalComponent,
+    ProfileComponent,
+    ReportsComponent,
+    TaxesComponent,
+    TransactionsComponent,
+    TranslationsComponent,
+    UserListComponent,
+    AdminIndexComponent,
+    // IndexComponent,
 
   ],
   imports: [
