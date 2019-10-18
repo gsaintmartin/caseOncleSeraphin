@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-md-12 col-sm-12 py-3">
-      <h2 class="pb-2">Notre sélection</h2>
+      <h2 class="pb-2 selectionText">Notre sélection</h2>
       <ngb-carousel *ngIf="eventList">
         <ng-template ngbSlide *ngFor="let event of eventList">
           <img [src]="event.img" alt="Random slide">
