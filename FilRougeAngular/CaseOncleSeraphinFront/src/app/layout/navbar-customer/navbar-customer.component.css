@@ -10,6 +10,12 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+.site-btn .registerButton{
+
+padding: 0;
+  max-width: 20%;
+}
+
 html,
 body {
 	height: 100%;
