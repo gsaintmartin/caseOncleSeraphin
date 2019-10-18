@@ -2,11 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { FormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
-
 import { CartComponent } from './site/cart/cart.component';
 import { CategoryAgricolesComponent } from './site/category-agricoles/category-agricoles.component';
 import { CategoryAllComponent } from './site/category-all/category-all.component';
@@ -34,21 +31,18 @@ import { AuthGuardService} from './service/auth-guard.service';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'index', component: HomeComponent },
-  { path: 'cart', canActivate:[AuthGuardService], component: CartComponent },
+  { path: 'cart', canActivate: [AuthGuardService], component: CartComponent },
   { path: 'category_agricoles', component: CategoryAgricolesComponent },
   { path: 'category_all', component: CategoryAllComponent },
   { path: 'category_blancs', component: CategoryBlancsComponent },
   { path: 'category_vieux', component: CategoryVieuxComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'page_admin', canActivate:[AuthGuardService], component: PageAdminComponent },
+  { path: 'page_admin', canActivate: [AuthGuardService], component: PageAdminComponent },
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
-
-  // { path: 'auth', component: AuthComponent },
-  // { path: 'appareils/:id', canActivate : [AuthGuard], component: SingleAppareilComponent },
   { path: 'not-found', component: Erreur404Component },
   { path: '**', redirectTo: '/not-found' }
 ];
