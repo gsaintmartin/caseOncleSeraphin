@@ -5,7 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { CartComponent } from './site/cart/cart.component';
+import { CartComponent } from './cart/cart.component';
 import { CategoryAgricolesComponent } from './site/category-agricoles/category-agricoles.component';
 import { CategoryAllComponent } from './site/category-all/category-all.component';
 import { CategoryBlancsComponent } from './site/category-blancs/category-blancs.component';

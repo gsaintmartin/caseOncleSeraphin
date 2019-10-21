@@ -20,4 +20,9 @@ export class CategoryAllComponent implements OnInit {
     });
   }
 
+  addProductCart(prod: Product) {
+
+this.products.push(prod);
+  }
+
 }

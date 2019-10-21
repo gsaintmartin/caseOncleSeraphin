@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
+
+
+  constructor() {
+  }
   // Some random event list
   eventList = [
     {
@@ -34,10 +38,15 @@ export class CarouselComponent implements OnInit {
     },
 
   ];
+@Input() numberProducts: number;
 
 
-  constructor() {
-  }
+addProductCart() {
+
+  this.numberProducts += 1;
+}
+
   ngOnInit() {
   }
+
 }
