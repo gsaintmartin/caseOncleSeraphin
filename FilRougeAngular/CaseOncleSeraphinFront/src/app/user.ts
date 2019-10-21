@@ -32,4 +32,4 @@ listContacts: LinkedList<Contact>;
   this.creationDate = creationDate;
   this.role = role;
 }
-}
+

@@ -3,6 +3,7 @@ package caseoncleseraphin.controller;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import caseoncleseraphin.exception.BadRequestException;
 import caseoncleseraphin.exception.NotFoundException;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 public abstract class Controller<T> {
 
