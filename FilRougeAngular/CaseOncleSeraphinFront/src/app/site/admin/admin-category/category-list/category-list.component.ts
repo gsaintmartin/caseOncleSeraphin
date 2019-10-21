@@ -1,7 +1,7 @@
 import { CategoryDetailsComponent } from '../category-details/category-details.component';
 import { Observable } from 'rxjs';
 import { CategoryService } from '../category.service';
-import { category } from '../category';
+import { Category } from '../category';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit {
-  categorys: Observable<category[]>;
+  categorys: Observable<Category[]>;
 
   constructor(private categoryService: CategoryService,
               private router: Router) {}
@@ -21,11 +21,11 @@ export class CategoryListComponent implements OnInit {
   }
 
   reloadData() {
-    this.categorys = this.categoryService.getcategorysList();
+    this.categorys = this.categoryService.getCategorysList();
   }
 
-  deletecategory(id: number) {
-    this.categoryService.deletecategory(id)
+  deleteCategory(id: number) {
+    this.categoryService.deleteCategory(id)
       .subscribe(
         data => {
           console.log(data);

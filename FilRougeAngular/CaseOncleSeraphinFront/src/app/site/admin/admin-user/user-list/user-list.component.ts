@@ -14,7 +14,7 @@ export class UserListComponent implements OnInit {
   users: Observable<user[]>;
 
   constructor(private userService: UserService,
-    private router: Router) {}
+              private router: Router) {}
 
   ngOnInit() {
     this.reloadData();
