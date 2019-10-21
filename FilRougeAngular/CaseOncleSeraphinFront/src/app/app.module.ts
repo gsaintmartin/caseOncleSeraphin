@@ -58,6 +58,9 @@ import { TransactionsComponent } from './site/page-admin2/transactions/transacti
 import { TranslationsComponent } from './site/page-admin2/translations/translations.component';
 import { UserListComponent } from './site/page-admin2/user-list/user-list.component';
 import { AdminIndexComponent } from './site/page-admin2/admin-index/admin-index.component';
+import { CategorySubComponent } from './site/page-admin2/category-sub/category-sub.component';
+import { ListVendorComponent } from './site/page-admin2/list-vendor/list-vendor.component';
+import { MenuListComponent } from './site/page-admin2/menu-list/menu-list.component';
 
 // import { IndexComponent } from './site/page-admin2/index/index.component';
 
@@ -160,6 +163,9 @@ const appRoutes: Routes = [
     TranslationsComponent,
     UserListComponent,
     AdminIndexComponent,
+    CategorySubComponent,
+    ListVendorComponent,
+    MenuListComponent,
     // IndexComponent,
 
   ],

@@ -21,8 +21,9 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
-             
+              "src/assets",
+              "src/assets-admin"
+
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
