@@ -31,8 +31,8 @@ listContacts: LinkedList<Contact>;
   this.creationDate = creationDate;
   this.role = role;
 }
-   constructor(
-    public status: string,
-     ) {}
+  //  constructor(
+  //   public status: string,
+  //    ) {}
 
 }
