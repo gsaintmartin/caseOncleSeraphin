@@ -33,8 +33,12 @@ listContacts: LinkedList<Contact>;
   this.role = role;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
    constructor() {}
 
 =======
 >>>>>>> Pierre
 }
+=======
+
+>>>>>>> 83e7af14352a95348eeb3f0ceb66a481e01d604f
