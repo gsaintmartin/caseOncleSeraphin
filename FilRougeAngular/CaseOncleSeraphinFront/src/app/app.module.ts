@@ -41,8 +41,9 @@ import { CategoryDetailsComponent } from './site/admin/admin-category/category-d
 import { CategoryListComponent } from './site/admin/admin-category/category-list/category-list.component';
 
 import { CreateUserComponent } from './site/admin/admin-user/create-user/create-user.component';
-import { UserDetailsComponent } from './site/admin/admin-user/user-details/user-details.component';
 import { UserListComponent } from './site/admin/admin-user/user-list/user-list.component';
+import { UserDetailsComponent } from './site/admin/admin-user/user-details/user-details.component';
+
 
 
 

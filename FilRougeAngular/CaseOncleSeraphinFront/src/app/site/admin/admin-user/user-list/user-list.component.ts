@@ -1,7 +1,7 @@
 import { UserDetailsComponent } from '../user-details/user-details.component';
 import { Observable } from 'rxjs';
 import { UserService } from '../user.service';
-import { User } from '../user';
+import { user } from '../user';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,21 +10,21 @@ import { Router } from '@angular/router';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-export class EmployeeListComponent implements OnInit {
-  employees: Observable<User[]>;
+export class UserListComponent implements OnInit {
+  users: Observable<user[]>;
 
-  constructor(private employeeService: UserService,
-              private router: Router) {}
+  constructor(private userService: UserService,
+    private router: Router) {}
 
   ngOnInit() {
     this.reloadData();
   }
 
   reloadData() {
-    this.employees = this.employeeService.getUserList();
+    this.users = this.userService.getUsersList();
   }
 
-  deleteEmployee(id: number) {
+  deleteuser(id: number) {
     this.userService.deleteUser(id)
       .subscribe(
         data => {
@@ -38,3 +38,4 @@ export class EmployeeListComponent implements OnInit {
     this.router.navigate(['details', id]);
   }
 }
+
