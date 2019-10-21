@@ -30,17 +30,18 @@ export class LoginComponent implements OnInit {
   dismiss() {
     this.activeModalService.close();
   }
+
   checkLogin() {
     (this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
         this.router.navigate(['']);
         this.invalidLogin = false;
+        this.passBack();
+        console.log(this.invalidLogin);
       },
       error => {
         this.invalidLogin = true;
-
       }
-    )
-    );
+    ));
   }
 }
