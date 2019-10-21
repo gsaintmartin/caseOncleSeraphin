@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import caseoncleseraphin.model.Category;
 import caseoncleseraphin.model.criteria.CategoryCriteria;
 import caseoncleseraphin.service.CategoryService;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/categories")
 public class CategoryController extends Controller<Category> {

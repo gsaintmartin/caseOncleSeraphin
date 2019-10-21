@@ -10,6 +10,8 @@
   <!--Body-->
   <div class="modal-body mx-4">
     <!--Body-->
+    <div class="error" *ngIf="invalidLogin === true">MAUVAIS USERNAME OU PASSWORD INVALIDE</div>
+
     <div class="md-form mb-5">
       <input type="email" id="Form-email1" class="form-control validate" [(ngModel)]="username" [ngModelOptions]="{standalone : true}">
       <label data-error="wrong" data-success="right" for="Form-email1">email</label>
@@ -24,7 +26,7 @@
     </div>
 
     <div class="text-center mb-3">
-      <button type="button" (click)="passBack()" (click)="checkLogin()"
+      <button type="button" (click)="checkLogin()"
         class="btn btn-danger btn-user btn-block btn-text blue-gradient btn-rounded z-depth-1a ">Se connecter</button>
     </div>
     <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> Se connecter via :</p>
