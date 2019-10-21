@@ -11,10 +11,11 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
 export class NavbarCustomerComponent implements OnInit {
 
 
-
   constructor(private modalService: NgbModal, public loginService: AuthenticationService) { }
 
   navbarOpen = false;
+
+  numberProducts = 12;
 
   ngOnInit() {
   }
@@ -31,6 +32,11 @@ this.navbarOpen = !this.navbarOpen;
         console.log(result);
       }
     });
+  }
+
+  addProductCart() {
+
+    this.numberProducts += 1;
   }
 
 

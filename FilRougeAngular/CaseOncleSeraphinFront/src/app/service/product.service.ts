@@ -8,6 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ProductService {
 
+
   private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/products/';
 
   constructor(private httpClient: HttpClient) { }
@@ -17,4 +18,17 @@ export class ProductService {
 
     return this.httpClient.get<Product[]>(this.baseUrl, { headers });
   }
+
+  addProductToCart(product: any) {
+    localStorage.setItem("product", JSON.stringify(product));
+  }
+
+  getProductFromCart(): Product[] {
+    return JSON.parse(localStorage.getItem('product'));
+  }
+
+  removeAllProductFromCart() {
+    return localStorage.removeItem("product");
+  }
+
 }
