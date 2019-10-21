@@ -17,6 +17,7 @@ export class User {
   creationDate: Date;
   status: string;
   role: Role;
+
 listCommands: LinkedList<Command>;
 listContacts: LinkedList<Contact>;
   // tslint:disable-next-line: max-line-length
@@ -31,6 +32,9 @@ listContacts: LinkedList<Contact>;
   this.creationDate = creationDate;
   this.role = role;
 }
+<<<<<<< HEAD
    constructor() {}
 
+=======
+>>>>>>> Pierre
 }
