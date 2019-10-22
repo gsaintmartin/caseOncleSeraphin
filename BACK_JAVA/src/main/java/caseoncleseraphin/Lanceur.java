@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
 import caseoncleseraphin.exception.BadRequestException;
+import caseoncleseraphin.model.Product;
 import caseoncleseraphin.model.Right;
 import caseoncleseraphin.model.Role;
 import caseoncleseraphin.model.User;
+import caseoncleseraphin.service.ProductService;
 import caseoncleseraphin.service.RightService;
 import caseoncleseraphin.service.RoleService;
 import caseoncleseraphin.service.UserService;
@@ -27,6 +29,9 @@ public class Lanceur {
 	
 	@Autowired
 	private RoleService roleService;
+	
+	@Autowired
+	private ProductService productService;
 	
 
 	@PostConstruct
@@ -88,7 +93,7 @@ public class Lanceur {
 			User admin2 = new User("Giraud", "Pierre", "pgiraud", "pgiraud@gmail.com", "8 rue de la resistance",
 					"0699842033", "azerty", (LocalDate.of(2019, 9, 21)), roleAdmin);
 			try {
-				userService.findOneByUsername("bdeeljore");
+				userService.findOneByUsername("pgiraud");
 				System.out.println("le login " + admin2.getUsername() + " existe déjà.");
 			} catch (EmptyResultDataAccessException e) {
 				userService.save(admin2);
@@ -98,7 +103,7 @@ public class Lanceur {
 			User admin3 = new User("Augier", "Julien", "jaugier", "jaugier@gmail.com", "9 rue de la resistance",
 					"0699842034", "azerty", (LocalDate.of(2019, 9, 21)), roleAdmin);
 			try {
-				userService.findOneByUsername("bdeeljore");
+				userService.findOneByUsername("jaugier");
 				System.out.println("le login " + admin3.getUsername() + " existe déjà.");
 			} catch (EmptyResultDataAccessException e) {
 				userService.save(admin3);
@@ -107,7 +112,7 @@ public class Lanceur {
 			User admin4 = new User("Saint-Martin", "Guillaume", "gsaintmartin", "gsaintmartin@gmail.com", "10 rue de la resistance",
 					"0699842035", "azerty", (LocalDate.of(2019, 9, 21)), roleAdmin);
 			try {
-				userService.findOneByUsername("bdeeljore");
+				userService.findOneByUsername("gsaintmartin");
 				System.out.println("le login " + admin4.getUsername() + " existe déjà.");
 			} catch (EmptyResultDataAccessException e) {
 				userService.save(admin4);
@@ -125,8 +130,24 @@ public class Lanceur {
 				userService.save(client1);
 				System.out.println("l'utilisateur " + client1.getUsername() + " a ete créé.");
 			}
+			
+			
+			Product prod1 = new Product("MATUSALEM 15 ans Gran Reserva 40%", 
+					"MATUSALEM 15 ans Gran Reserva 40%", 
+					"https://www.whisky.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/1/m16007.jpg",
+					"MATUSALEM",
+					35,
+					10);
+			
+			System.out.println("Le produit " + prod1.getName() + " a ete créé.");
+
+		productService.saveProduct(prod1);
 		}
 	}
+	
+	//Creation des produits
+	
+	
 	
 	
 	@PostConstruct
