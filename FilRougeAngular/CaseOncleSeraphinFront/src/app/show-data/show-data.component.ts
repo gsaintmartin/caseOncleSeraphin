@@ -18,10 +18,10 @@ export class ShowDataComponent implements OnInit {
     return this.form.get('name');
   }
 
-  get Category()
-  {
-    return this.form.get('category');
-  }
+  // get Category()
+  // {
+  //   return this.form.get('category');
+  // }
 
   private product2Criteres = new Product2Citeres();
   private data;
@@ -49,7 +49,7 @@ export class ShowDataComponent implements OnInit {
 
   searchForm(searchInfo)
   {
-        this.product2Criteres.categoryId = this.Category.value;
+        //this.product2Criteres.categoryId = this.Category.value;
         this.product2Criteres.name = this.Name.value;
         this.getData(this.product2Criteres);
   }
