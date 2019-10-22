@@ -5,5 +5,4 @@ export class Category {
   id: number;
   categoryName: string;
   listProducts: LinkedList<Product>;
-
 }
