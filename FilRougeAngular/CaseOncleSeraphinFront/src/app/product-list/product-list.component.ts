@@ -1,9 +1,10 @@
 import { ProductDetailsComponent } from '../site/admin/admin-product/product-details/product-details.component';
 import { Observable } from 'rxjs';
-import { ProductService } from '../site/admin/admin-product/product.service';
+//import { ProductService } from '../site/admin/admin-product/product.service';
 import { Product } from '../product';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'app-product-list',
