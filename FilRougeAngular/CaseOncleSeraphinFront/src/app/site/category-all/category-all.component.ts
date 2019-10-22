@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/product';
 
@@ -11,6 +11,8 @@ export class CategoryAllComponent implements OnInit {
 
   products: Product[];
 
+  @Output() numberProducts;
+
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
@@ -20,9 +22,10 @@ export class CategoryAllComponent implements OnInit {
     });
   }
 
-  addProductCart(prod: Product) {
+  addProductCart() {
 
-this.products.push(prod);
+    this.numberProducts += 1;
+
   }
 
 
