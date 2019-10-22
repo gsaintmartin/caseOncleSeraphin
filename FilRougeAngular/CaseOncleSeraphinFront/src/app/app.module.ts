@@ -2,12 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { CartComponent } from './site/cart/cart.component';
+import { CartComponent } from './cart/cart.component';
 import { CategoryAgricolesComponent } from './site/category-agricoles/category-agricoles.component';
 import { CategoryAllComponent } from './site/category-all/category-all.component';
 import { CategoryBlancsComponent } from './site/category-blancs/category-blancs.component';
@@ -31,10 +29,24 @@ import { LogoutComponent } from './logout/logout.component';
 
 import { AnimateComponentComponent } from './animate-component/animate-component.component';
 import { ProductSliderComponent } from './product-slider/product-slider.component';
-
 import { AuthGuardService} from './service/auth-guard.service';
 import { ShowDataComponent } from './show-data/show-data.component';
 import { Product2CriteresService } from './services/product2-criteres.service';
+
+
+import { CreateProductComponent } from './site/admin/admin-product/create-product/create-product.component';
+import { ProductDetailsComponent } from './site/admin/admin-product/product-details/product-details.component';
+import { ProductListComponent } from './site/admin/admin-product/product-list/product-list.component';
+
+import { CreateCategoryComponent } from './site/admin/admin-category/create-category/create-category.component';
+import { CategoryDetailsComponent } from './site/admin/admin-category/category-details/category-details.component';
+import { CategoryListComponent } from './site/admin/admin-category/category-list/category-list.component';
+
+import { CreateUserComponent } from './site/admin/admin-user/create-user/create-user.component';
+import { UserListComponent } from './site/admin/admin-user/user-list/user-list.component';
+import { UserDetailsComponent } from './site/admin/admin-user/user-details/user-details.component';
+
+
 
 
 
@@ -53,8 +65,19 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
+
+  { path: 'create_user', component: CreateUserComponent },
+  { path: 'create_category', component: CreateCategoryComponent },
+  { path: 'create_user', component: CreateUserComponent },
+  { path: 'product_list', component: ProductListComponent },
+  { path: 'user_list', component: UserListComponent },
+  { path: 'category_list', component: CategoryListComponent },
+  { path: 'product_details', component: ProductDetailsComponent },
+  { path: 'user_details', component: UserDetailsComponent },
+  { path: 'category_details', component: CategoryDetailsComponent },
+
   { path: 'not-found', component: Erreur404Component },
-  { path: '**', redirectTo: '/not-found' }
+  { path: '**', redirectTo: '/not-found' },
 ];
 
 @NgModule({
@@ -78,10 +101,21 @@ const appRoutes: Routes = [
     CarouselComponent,
     LoginComponent,
     LogoutComponent,
+
     ShowDataComponent,
     AnimateComponentComponent,
     ProductSliderComponent,
-    ShowDataComponent
+    CreateUserComponent,
+    UserListComponent,
+    UserDetailsComponent,
+    ProductListComponent,
+    ProductDetailsComponent,
+    CreateProductComponent,
+    CategoryListComponent,
+    CreateCategoryComponent,
+    CategoryDetailsComponent,
+
+
 
   ],
   imports: [

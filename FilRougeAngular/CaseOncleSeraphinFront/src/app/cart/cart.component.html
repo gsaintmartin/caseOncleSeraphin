@@ -1,0 +1,185 @@
+
+<!-- cart section end -->
+<section class="cart-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="cart-table">
+          <h3>Votre Panier</h3>
+          <div class="cart-table-warp">
+
+            <table class="table table-bordered table-responsive table-hover">
+              <thead class="thead-light">
+              <tr>
+                <th>Image</th>
+                <th>Name & Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Add/Remove</th>
+                <th>Total For Item</th>
+              </tr>
+              </thead>
+              <tr *ngFor="let prod of productAddedTocart;let q = index">
+                <td class="text-center">{{prod.name}}-{{prod.description}}</td>
+                <td>{{prod.price}}</td>
+                <td>{{prod.stockQuantity}}</td>
+                <td>
+                  <div class="form-inline">
+                  <button type="button" (click)="onAddQuantity(prod)" class="btn btn-success">+</button>
+                  <input type="text"  [ngModel] ="prod.stockQuantity" (ngModelChange) ="prod.Quantity=$event" class="form-control form-inline" id="count">
+                 <!-- <button type="button" (click)="onRemoveQuantity(prod)" class="btn btn-danger">-</button>-->
+                  </div>
+                </td>
+                <td>{{prod.price * prod.stockQuantity}}</td>
+              </tr>
+            </table>
+
+            <table>
+              <thead>
+                <tr>
+                  <th class="product-th">Produits</th>
+                  <th class="quy-th">Quantité</th>
+                  <th class="total-th">Prix</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let prod of productAddedTocart;let q = index">
+                  <td class="product-col">
+                    <img src="img/cart/1.jpg" alt="">
+                    <div class="pc-title">
+                      <td class="text-center">{{prod.name}}-{{prod.description}}</td>
+                      <td>{{prod.price}}</td>
+                        <td>{{prod.stockQuantity}}</td>
+                    </div>
+                  </td>
+                  <td class="quy-col">
+                    <div class="quantity">
+                      <div class="pro-qty">
+                        <input type="text" value="1">
+                      </div>
+                    </div>
+                  </td>
+                  <!--<td class="size-col"><h4>Size M</h4></td>-->
+                  <td class="total-col"><h4>35,00€</h4></td>
+                </tr>
+
+                <tr>
+                  <td class="product-col">
+                    <img src="img/cart/3.jpg" alt="">
+                    <div class="pc-title">
+                      <h4>Exemple titre</h4>
+                      <p>exemple prix unitaire€</p>
+                    </div>
+                  </td>
+                  <td class="quy-col">
+                    <div class="quantity">
+                      <div class="pro-qty">
+                        <input type="text" value="1">
+                      </div>
+                    </div>
+                  </td>
+                  <!--<td class="size-col"><h4>Size M</h4></td>-->
+                  <td class="total-col"><h4>exemple prix total produit </h4></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="total-cost">
+            <h6>Total <span>{{allTotal}}</span></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 card-right">
+        <form class="promo-code-form">
+          <input type="text" placeholder="Entrer le code promo">
+          <button>Appliquer</button>
+        </form>
+        <a routerLink="checkout" class="site-btn">Proceder au paiement</a>
+        <a routerLink="category_all" class="site-btn sb-dark">Continuer les
+          achats</a>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- cart section end -->
+
+<!-- Related product section -->
+<section class="related-product-section">
+  <div class="container">
+    <div class="section-title text-uppercase">
+      <h2>Continuer les achats</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <div class="product-item">
+          <div class="pi-pic">
+            <div class="tag-new">Nouveau</div>
+            <img src="./img/product/2.jpg" alt="">
+            <div class="pi-links">
+              <a routerLink="cart" class="add-card"><i class="fas fa-cart-plus"></i><span>Ajouter
+                  au panier</span></a>
+              <a routerLink="product" class="wishlist-btn"><i class="fas
+                  fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="pi-text">
+            <h6>760,00€</h6>
+            <p>BLACK TOT Royal</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="product-item">
+          <div class="pi-pic">
+            <img src="./img/product/5.jpg" alt="">
+            <div class="pi-links">
+              <a routerLink="cart" class="add-card"><i class="fas fa-cart-plus"></i><span>Ajouter
+                  au panier</span></a>
+              <a routerLink="product" class="wishlist-btn"><i class="fas
+                  fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="pi-text">
+            <h6>69,00€</h6>
+            <p>FLOR DE CANA 18 ans 40%</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="product-item">
+          <div class="pi-pic">
+            <img src="./img/product/9.jpg" alt="">
+            <div class="pi-links">
+              <a routerLink="cart" class="add-card"><i class="fas fa-cart-plus"></i><span>Ajouter
+                  au panier</span></a>
+              <a routerLink="product" class="wishlist-btn"><i class="fas
+                  fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="pi-text">
+            <h6>250,00€S</h6>
+            <p>SAVANNA 15 ans 1999 </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="product-item">
+          <div class="pi-pic">
+            <img src="./img/product/1.jpg" alt="">
+            <div class="pi-links">
+              <a routerLink="cart" class="add-card"><i class="fas fa-cart-plus"></i><span>Ajouter
+                  au panier</span></a>
+              <a routerLink="product" class="wishlist-btn"><i class="fas
+                  fa-eye"></i></a>
+            </div>
+          </div>
+          <div class="pi-text">
+            <h6>$35,00</h6>
+            <p>Flamboyant Pink Top </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

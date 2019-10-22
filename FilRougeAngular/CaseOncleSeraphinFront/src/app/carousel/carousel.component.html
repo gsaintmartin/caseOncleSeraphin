@@ -9,7 +9,8 @@
           <div class="carousel-caption">
             <h3>{{ event.eventLocation }}</h3>
             <!-- <p [innerText]="event.eventDescription"></p> -->
-            <button routerLink="product" class="site-btn">Commander</button>
+
+            <button (click)="addProductCart()" class="site-btn">Commander</button>
           </div>
         </ng-template>
       </ngb-carousel>

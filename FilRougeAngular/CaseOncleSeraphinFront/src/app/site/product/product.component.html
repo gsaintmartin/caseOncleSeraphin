@@ -3,7 +3,7 @@
 <section class="product-section">
   <div class="container">
     <div class="back-link">
-      <a routerLink= "category_vieux"> &lt;&lt; Revenir aux rhums vieux</a>
+      <a routerLink= "category_vieux">  Revenir aux rhums vieux</a>
     </div>
     <div class="row">
       <div class="col-lg-6">
@@ -19,11 +19,11 @@
 
 
         <div class="p-rating">
-          <i class="fa fa-star-o fa-fade"></i>
-          <i class="fa fa-star-o fa-fade"></i>
-          <i class="fa fa-star-o fa-fade"></i>
-          <i class="fa fa-star-o fa-fade"></i>
-          <i class="fa fa-star-o fa-fade"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+          <i class="far fa-star"></i>
+
         </div>
         <div class="p-review">
           <a routerLinkActive="">0 reviews</a>|<a routerLinkActive="">Donner son avis</a>
@@ -33,6 +33,11 @@
           <p>Quantité</p>
                       <div class="pro-qty"><input type="text" value="1"></div>
                   </div>
+
+
+
+    <a (click)="addProductCart()" class="site-btn btn-danger">Acheter maintenant</a>
+
         <a routerLinkActive="#" class="site-btn">Acheter maintenant</a>
         <div id="accordion" class="accordion-area">
           <div class="panel">
@@ -63,11 +68,11 @@
 
         </div>
         <div class="social-sharing">
-          <a href=""><i class="fa fa-google-plus"></i></a>
-          <a href=""><i class="fa fa-pinterest"></i></a>
-          <a href=""><i class="fa fa-facebook"></i></a>
-          <a href=""><i class="fa fa-twitter"></i></a>
-          <a href=""><i class="fa fa-youtube"></i></a>
+          <a href=""><i class="fab fa-google-plus"></i></a>
+          <a href=""><i class="fab fa-pinterest"></i></a>
+          <a href=""><i class="fab fa-facebook"></i></a>
+          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href=""><i class="fab fa-youtube"></i></a>
         </div>
       </div>
     </div>
@@ -76,7 +81,7 @@
 <!-- product section end -->
 
 
-<!-- RELATED PRODUCTS section -->
+<!-- RELATED PRODUCTS section
 <section class="related-product-section">
   <div class="col-lg-4 col-sm-6">
       <div class="product-item">
@@ -96,4 +101,4 @@
       </div>
     </div>
 </section>
-<!-- RELATED PRODUCTS section end -->
+RELATED PRODUCTS section end -->
