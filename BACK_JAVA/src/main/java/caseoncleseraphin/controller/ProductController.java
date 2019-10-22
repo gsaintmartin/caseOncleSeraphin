@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import caseoncleseraphin.exception.BadRequestException;
 import caseoncleseraphin.exception.NotFoundException;
 import caseoncleseraphin.model.Product;
+import caseoncleseraphin.model.criteria.ProductCritNameCategory;
 import caseoncleseraphin.model.criteria.ProductCriteria;
 import caseoncleseraphin.service.ProductService;
 
@@ -69,7 +70,8 @@ public class ProductController extends Controller<Product> {
 	}
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public List<Product> search(@RequestParam(required = false) String name,
+	public List<Product> search(
+			@RequestParam(required = false) String name,
 			@RequestParam(required = false) Long category,
 			@RequestParam(required = false) String company,
 			@RequestParam(required = false) Double priceMin,
@@ -78,5 +80,12 @@ public class ProductController extends Controller<Product> {
 		
 		return productService.search(criteria);
 	}
+	@RequestMapping(value = "/searchBar", method = RequestMethod.GET)
+	public List<Product> searchBar(
+			@RequestParam(required = false) String name,
+			@RequestParam(required = false) Long category)
+			{ProductCritNameCategory critNameNCat = new ProductCritNameCategory(name, category);
+			return productService.searchBar(critNameNCat);
+			}
 
 }
