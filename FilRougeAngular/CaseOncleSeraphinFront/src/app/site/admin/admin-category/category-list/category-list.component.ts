@@ -2,9 +2,6 @@ import { CategoryDetailsComponent } from '../category-details/category-details.c
 import { Observable } from 'rxjs';
 import { CategoryService } from '../../../../service/category.service';
 
-
-
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/category';
