@@ -1,12 +1,14 @@
 package caseoncleseraphin.controller;
 
 
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +25,7 @@ import caseoncleseraphin.model.User;
 import caseoncleseraphin.model.criteria.UserCriteria;
 import caseoncleseraphin.service.UserService;
 
-
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping ("/api/users")
 public class UserController extends Controller<User> {
@@ -81,10 +83,9 @@ public class UserController extends Controller<User> {
 	}
     
     //In the controller we define another REST API for returning the user object.
-    
     @GetMapping(produces = "application/json")
-	@RequestMapping({ "/validateLogin" })
-	public User validateLogin() {
-		return new User("User successfully authenticated");
+	@RequestMapping(value= "/authenticate" )
+    public Principal validateLogin(Principal principal) {
+        return principal;
 	}
 }

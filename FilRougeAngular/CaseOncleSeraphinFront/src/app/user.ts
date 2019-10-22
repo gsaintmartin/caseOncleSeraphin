@@ -1,3 +1,5 @@
+
+
 import { Role } from './role';
 import { LinkedList } from 'ngx-bootstrap/utils/public_api';
 import { Command } from 'selenium-webdriver';
@@ -15,6 +17,7 @@ export class User {
   creationDate: Date;
   status: string;
   role: Role;
+
 listCommands: LinkedList<Command>;
 listContacts: LinkedList<Contact>;
   // tslint:disable-next-line: max-line-length

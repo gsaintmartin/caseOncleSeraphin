@@ -1,21 +1,43 @@
 import { Injectable } from '@angular/core';
-import { LoginInfo } from '../login-info';
+import { map } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { User } from '../user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor() { }
+  constructor( private httpClient: HttpClient) { }
 
-  authenticate(username, password) {
-    if (username === 'bibiphoque34' && password === 'couille') {
-      sessionStorage.setItem('username', username);
-      return true;
-    } else {
-      return false;
-    }
+  authenticate(username, password): Observable<User> {
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+    return this.httpClient.get<User>('http://localhost:8080/caseOncleSeraphin/api/users/authenticate', { headers }).pipe(
+      map(
+        userData => {
+          sessionStorage.setItem('username', username);
+          const authString = 'Basic ' + btoa(username + ':' + password);
+          sessionStorage.setItem('basicauth', authString);
+          console.log(userData);
+          return userData;
+        }
+      )
+    );
   }
+
+/*   .subscribe(
+    (response) => {
+      sessionStorage.setItem('username', username);
+      const authString = 'Basic ' + btoa(username + ':' + password);
+      sessionStorage.setItem('basicauth', authString);
+      console.log(response);
+      return response;
+    },
+    (error) => {
+      errorCallback();
+    }
+  ); */
 
   isUserLoggedIn() {
     const user = sessionStorage.getItem('username');
