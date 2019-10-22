@@ -25,4 +25,5 @@ export class CategoryAllComponent implements OnInit {
 this.products.push(prod);
   }
 
+
 }

@@ -17,7 +17,7 @@ export class Product2CriteresService {
   {
     const url = this.baseUrl + 'products/search';
     const params = new  HttpParams()
-      .set('name', product2Critere.name)
+      .set('name', product2Critere.name);
       //.set('category', product2Critere.categoryId);
     return  this.httpClient.get<Product[]>(url, { params });
   }

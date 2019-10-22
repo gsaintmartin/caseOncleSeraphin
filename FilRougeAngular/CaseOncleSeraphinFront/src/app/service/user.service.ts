@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Product } from 'src/app/product';
+import { User } from 'src/app/user';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
-  deleteProduct(id: number)  {
+export class UserService {
+  deleteUser(id: number): Observable<User> {
     throw new Error("Method not implemented.");
   }
-  getProductsList(): Observable<Product[]> {
+  getUsersList(): Observable<any[]> {
     throw new Error("Method not implemented.");
+  }
+  createUser(user: User): Observable<User> {
+    return;
   }
 
   constructor() { }
-
-  createProduct(product: Product): Observable<Product> {
-    return;
-  }
 }
+

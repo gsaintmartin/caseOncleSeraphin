@@ -13,6 +13,7 @@ import caseoncleseraphin.dao.ProductJpaRepository;
 import caseoncleseraphin.exception.BadRequestException;
 import caseoncleseraphin.exception.NotFoundException;
 import caseoncleseraphin.model.Product;
+import caseoncleseraphin.model.criteria.ProductCritNameCategory;
 import caseoncleseraphin.model.criteria.ProductCriteria;
 
 @Transactional
@@ -68,6 +69,13 @@ public class ProductService {
 
 	public List<Product> search(ProductCriteria criteria) {
 		return productJpaRepository.search(criteria);
+	}
+
+	
+
+	public List<Product> searchBar(ProductCritNameCategory critNameNCat) {
+		
+		return productJpaRepository.searchBar(critNameNCat);
 	}
 
 }

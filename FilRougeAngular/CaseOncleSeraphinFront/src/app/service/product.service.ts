@@ -10,7 +10,6 @@ export class ProductService {
 
   private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/';
 
-
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<Product[]> {
@@ -19,19 +18,17 @@ export class ProductService {
     return this.httpClient.get<Product[]>(this.baseUrl + 'products', { headers });
   }
 
-
-
   addProductToCart(product: any) {
-    localStorage.setItem("product", JSON.stringify(product));
+    localStorage.setItem('product', JSON.stringify(product));
   }
+
 
   getProductFromCart(): Product[] {
     return JSON.parse(localStorage.getItem('product'));
   }
 
   removeAllProductFromCart() {
-    return localStorage.removeItem("product");
+    return localStorage.removeItem('product');
   }
-
 
 }
