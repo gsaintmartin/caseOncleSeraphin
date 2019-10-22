@@ -1,7 +1,10 @@
 import { CategoryDetailsComponent } from '../category-details/category-details.component';
 import { Observable } from 'rxjs';
 import { CategoryService } from '../../../../service/category.service';
-// tslint:disable-next-line: max-line-length;
+
+
+tslint:disable-next-line: max-line-length;
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/category';
