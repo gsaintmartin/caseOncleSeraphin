@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product';
 import { ProductService } from '../service/product.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Product2Citeres } from '../product2-citeres';
+import { Product2CriteresService } from '../services/product2-criteres.service';
 
 @Component({
   selector: 'app-show-data',
@@ -10,23 +11,33 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ShowDataComponent implements OnInit {
 
-  private product = new Product();
-  private data;
+  constructor(private product2CritereService: Product2CriteresService) { }
 
-  constructor(private productService: ProductService) { }
-
-  ngOnInit() {
-    this.getData(this.product);
+  get Name()
+  {
+    return this.form.get('name');
   }
 
-  // form = new FormGroup({
-  //   name : new FormControl()
-  // });
-
-
-  getData(product)
+  get Category()
   {
-      this.productService.getData(product).subscribe(
+    return this.form.get('category');
+  }
+
+  private product2Criteres = new Product2Citeres();
+  private data;
+
+  form = new FormGroup({
+    name : new FormControl()
+  });
+
+  ngOnInit() {
+    this.getData(this.product2Criteres);
+  }
+
+
+  getData(product2Criteres)
+  {
+      this.product2CritereService.getData(product2Criteres).subscribe(
         response => {
          console.log(this.data);
         },
@@ -38,19 +49,9 @@ export class ShowDataComponent implements OnInit {
 
   searchForm(searchInfo)
   {
-        this.product.category = this.Category.value;
-        this.product.name = this.Name.value;
-        this.getData(this.product);
-  }
-
-  get Name()
-  {
-    return this.form.get('name');
-  }
-
-  get Category()
-  {
-    return this.form.get('category');
+        this.product2Criteres.categoryId = this.Category.value;
+        this.product2Criteres.name = this.Name.value;
+        this.getData(this.product2Criteres);
   }
 
 

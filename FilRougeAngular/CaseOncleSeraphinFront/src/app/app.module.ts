@@ -34,7 +34,7 @@ import { ProductSliderComponent } from './product-slider/product-slider.componen
 
 import { AuthGuardService} from './service/auth-guard.service';
 import { ShowDataComponent } from './show-data/show-data.component';
-import { ProductService } from './service/product.service';
+import { Product2CriteresService } from './services/product2-criteres.service';
 
 
 
@@ -97,7 +97,7 @@ const appRoutes: Routes = [
 
 
   ],
-  providers: [ProductService,
+  providers: [Product2CriteresService,
     {
       provide:  APP_BASE_HREF, useValue: '/'
     }
