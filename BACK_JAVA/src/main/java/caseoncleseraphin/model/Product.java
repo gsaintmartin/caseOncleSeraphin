@@ -40,10 +40,10 @@ public class Product implements IdEntity {
 		super();
 	}
 
-	public Product(Long id, String name, String description, String image,String company, double price, int stockQuantity) {
+	public Product(String name, String description, String image,String company, double price, int stockQuantity) {
 		super();
 
-		this.id = id;
+	
 		this.name = name;
 		this.description = description;
 		this.image = image;
