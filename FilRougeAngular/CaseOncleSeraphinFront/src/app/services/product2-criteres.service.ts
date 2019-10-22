@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Product2Citeres } from '../product2-citeres';
+import { Product } from '../product';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +13,12 @@ export class Product2CriteresService {
   constructor(private httpClient: HttpClient) { }
 
 
-  getData(product2CriteresService: Product2CriteresService)
+  getData(product2Critere: Product2Citeres)
   {
-    const url = this.baseUrl + 'search';
-    return  this.httpClient.post(url , product2CriteresService);
+    const url = this.baseUrl + 'products/searchBar';
+    const params = new  HttpParams()
+      .set('name', product2Critere.name)
+      .set('category', product2Critere.categoryId);
+    return  this.httpClient.get<Product[]>(url, { params });
   }
 }
