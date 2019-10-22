@@ -19,7 +19,7 @@ export class ProductService {
   }
 
   addProductToCart(product: any) {
-    localStorage.setItem("product", JSON.stringify(product));
+    localStorage.setItem('product', JSON.stringify(product));
   }
 
 
@@ -28,7 +28,7 @@ export class ProductService {
   }
 
   removeAllProductFromCart() {
-    return localStorage.removeItem("product");
+    return localStorage.removeItem('product');
   }
 
 }
