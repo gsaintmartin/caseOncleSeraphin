@@ -1623,7 +1623,7 @@ ol {
 }
 
 .product-details .p-stock span {
-	color: #f51167;
+	color: navajowhite;
 }
 
 .product-details .p-rating {
@@ -1631,7 +1631,8 @@ ol {
 }
 
 .product-details .p-rating i {
-	color: #f51167;
+	color: navajowhite;
+
 }
 
 .product-details .p-rating i.fa-fade {
