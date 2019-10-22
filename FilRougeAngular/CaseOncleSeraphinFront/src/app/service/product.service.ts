@@ -8,13 +8,21 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/products/';
+  private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/';
 
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<Product[]> {
     const headers: HttpHeaders = new HttpHeaders().set('Accept', 'application/json');
 
-    return this.httpClient.get<Product[]>(this.baseUrl, { headers });
+    return this.httpClient.get<Product[]>(this.baseUrl + 'products', { headers });
   }
+
+  getData(product: Product)
+  {
+    const url = this.baseUrl + 'search';
+    return  this.httpClient.post(url , product);
+  }
+
+
 }

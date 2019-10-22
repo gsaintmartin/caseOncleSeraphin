@@ -1,0 +1,6 @@
+<div class="col-xl-5 col-lg-5">
+  <form [formGroup]="form" #searchInfo (ngSubmit)="searchForm(searchInfo)" class="header-search-form">
+    <input type="text" formControlName="name" placeholder="Chercher une bouteille..." class="form-control">
+    <button><i class="flaticon-search"></i></button>
+  </form>
+</div>

@@ -33,6 +33,8 @@ import { AnimateComponentComponent } from './animate-component/animate-component
 import { ProductSliderComponent } from './product-slider/product-slider.component';
 
 import { AuthGuardService} from './service/auth-guard.service';
+import { ShowDataComponent } from './show-data/show-data.component';
+import { ProductService } from './service/product.service';
 
 
 
@@ -76,9 +78,10 @@ const appRoutes: Routes = [
     CarouselComponent,
     LoginComponent,
     LogoutComponent,
-
+    ShowDataComponent,
     AnimateComponentComponent,
-    ProductSliderComponent
+    ProductSliderComponent,
+    ShowDataComponent
 
   ],
   imports: [
@@ -92,10 +95,11 @@ const appRoutes: Routes = [
     NgbModule,
     FormsModule,
 
+
   ],
-  providers: [
+  providers: [ProductService,
     {
-      provide: APP_BASE_HREF, useValue: '/'
+      provide:  APP_BASE_HREF, useValue: '/'
     }
   ],
   bootstrap: [
