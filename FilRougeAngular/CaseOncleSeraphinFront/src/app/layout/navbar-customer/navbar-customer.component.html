@@ -25,12 +25,16 @@
                 <a *ngIf="!loginService.isUserLoggedIn()" routerLink="register">Créer un compte</a>
               <a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Se déconnecter</a>
             </div>
+            <a (click)="addProductCart()" class="btn btn-danger">Commander</a>
+
             <div class="up-item">
               <div class="shopping-card">
+                <br>
+                <br>
                 <i class="flaticon-bag"></i>
-                <span>0</span>
+                <span>{{numberProducts}}</span>
               </div>
-              <a  routerLink="cart">Panier</a>
+              <a  href="cart">Panier</a>
             </div>
           </div>
         </div>

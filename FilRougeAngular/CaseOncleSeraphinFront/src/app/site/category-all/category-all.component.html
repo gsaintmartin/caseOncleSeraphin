@@ -113,15 +113,16 @@
                 <!-- https://image.noelshack.com/fichiers/2019/34/4/1566469309-3rivieres-cannes-brulees.jpg -->
                 <img src="{{ product.image }}" alt="">
                 <div class="pi-links">
-                  <a  routerLink="#" class="add-card"><i class="flaticon-bag"></i><span>Ajouter au panier</span></a>
-                  <a  routerLink="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                  <a (click)='addProductCart(product)' routerLink="cart" class="add-card"><i class="fas fa-cart-plus"></i><span>Ajouter au panier</span></a>
+                  <a routerLink="product" class="wishlist-btn"><i class="fas fa-eye"></i></a>
                 </div>
               </div>
               <div class="pi-text">
-                <h6>{{ product.price }}€<!--<span class="prix-soldé">50,00€ </span>--></h6>
+                <h6>{{ product.price}}€<!--<span class="prix-soldé">50,00€ </span>--></h6>
                 <p>{{ product.name }}</p>
               </div>
             </div>
+
           </div>
           <!-- <div class="col-lg-4 col-sm-6">
             <div class="product-item">
