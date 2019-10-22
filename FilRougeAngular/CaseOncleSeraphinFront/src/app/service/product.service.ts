@@ -24,11 +24,6 @@ export class ProductService {
     return this.httpClient.get<Product[]>(this.baseUrl + 'products', { headers });
   }
 
-  getData(product: Product)
-  {
-    const url = this.baseUrl + 'search';
-    return  this.httpClient.post(url , product);
-  }
 
 
   addProductToCart(product: any) {

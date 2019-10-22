@@ -31,7 +31,7 @@ import { AnimateComponentComponent } from './animate-component/animate-component
 import { ProductSliderComponent } from './product-slider/product-slider.component';
 import { AuthGuardService} from './service/auth-guard.service';
 import { ShowDataComponent } from './show-data/show-data.component';
-import { ProductService } from './service/product.service';
+import { Product2CriteresService } from './services/product2-criteres.service';
 
 
 import { CreateProductComponent } from './site/admin/admin-product/create-product/create-product.component';
@@ -131,7 +131,7 @@ const appRoutes: Routes = [
 
 
   ],
-  providers: [ProductService,
+  providers: [Product2CriteresService,
     {
       provide:  APP_BASE_HREF, useValue: '/'
     }
