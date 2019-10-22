@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
@@ -29,14 +29,14 @@ import { LogoutComponent } from './logout/logout.component';
 
 import { AnimateComponentComponent } from './animate-component/animate-component.component';
 import { ProductSliderComponent } from './product-slider/product-slider.component';
-import { AuthGuardService} from './service/auth-guard.service';
+import { AuthGuardService } from './service/auth-guard.service';
 import { ShowDataComponent } from './show-data/show-data.component';
-import { Product2CriteresService } from './services/product2-criteres.service';
+import { Product2CriteresService } from './service/product2-criteres.service';
 
 
 import { CreateproductComponent } from './site/admin/admin-product/create-product/create-product.component';
 import { ProductDetailsComponent } from './site/admin/admin-product/product-details/product-details.component';
-import { ProductListComponent } from './site/admin/admin-product/product-list/product-list.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 import { CreatecategoryComponent } from './site/admin/admin-category/create-category/create-category.component';
 import { CategoryDetailsComponent } from './site/admin/admin-category/category-details/category-details.component';
@@ -133,7 +133,7 @@ const appRoutes: Routes = [
   ],
   providers: [Product2CriteresService,
     {
-      provide:  APP_BASE_HREF, useValue: '/'
+      provide: APP_BASE_HREF, useValue: '/'
     }
   ],
   bootstrap: [

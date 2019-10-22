@@ -5,7 +5,5 @@ export class Category {
   id: number;
   categoryName: string;
   listProducts: LinkedList<Product>;
-   constructor(categoryName: string) {
-    this.categoryName = categoryName;
-  }
+
 }

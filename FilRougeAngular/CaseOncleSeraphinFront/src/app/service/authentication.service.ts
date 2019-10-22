@@ -26,18 +26,19 @@ export class AuthenticationService {
     );
   }
 
-/*   .subscribe(
-    (response) => {
-      sessionStorage.setItem('username', username);
-      const authString = 'Basic ' + btoa(username + ':' + password);
-      sessionStorage.setItem('basicauth', authString);
-      console.log(response);
-      return response;
-    },
-    (error) => {
-      errorCallback();
-    }
-  ); */
+  // subscribe() {
+  //   // tslint:disable-next-line: no-unused-expression
+  //   (response) => {
+  //     sessionStorage.setItem('username', username);
+  //     const authString = 'Basic ' + btoa(username + ':' + password);
+  //     sessionStorage.setItem('basicauth', authString);
+  //     console.log(response);
+  //     return response;
+  //   },
+  //   (error) => {
+  //     errorCallback();
+  //   }
+  // };
 
   isUserLoggedIn() {
     const user = sessionStorage.getItem('username');
