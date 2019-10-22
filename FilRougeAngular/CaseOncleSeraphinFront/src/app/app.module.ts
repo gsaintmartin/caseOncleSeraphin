@@ -30,6 +30,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { AnimateComponentComponent } from './animate-component/animate-component.component';
 import { ProductSliderComponent } from './product-slider/product-slider.component';
 import { AuthGuardService} from './service/auth-guard.service';
+import { ShowDataComponent } from './show-data/show-data.component';
+import { ProductService } from './service/product.service';
 
 
 import { CreateProductComponent } from './site/admin/admin-product/create-product/create-product.component';
@@ -99,11 +101,10 @@ const appRoutes: Routes = [
     CarouselComponent,
     LoginComponent,
     LogoutComponent,
-    AnimateComponentComponent,
-    ProductSliderComponent,
-    AnimateComponentComponent,
-    ProductSliderComponent,
 
+    ShowDataComponent,
+    AnimateComponentComponent,
+    ProductSliderComponent,
     CreateUserComponent,
     UserListComponent,
     UserDetailsComponent,
@@ -113,6 +114,7 @@ const appRoutes: Routes = [
     CategoryListComponent,
     CreateCategoryComponent,
     CategoryDetailsComponent,
+
 
 
   ],
@@ -127,10 +129,11 @@ const appRoutes: Routes = [
     NgbModule,
     FormsModule,
 
+
   ],
-  providers: [
+  providers: [ProductService,
     {
-      provide: APP_BASE_HREF, useValue: '/'
+      provide:  APP_BASE_HREF, useValue: '/'
     }
   ],
   bootstrap: [
