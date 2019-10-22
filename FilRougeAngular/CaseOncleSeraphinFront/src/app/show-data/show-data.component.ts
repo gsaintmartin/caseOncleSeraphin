@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../service/product.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Product2Citeres } from '../product2-citeres';
-import { Product2CriteresService } from '../services/product2-criteres.service';
+import { Product2CriteresService } from '../service/product2-criteres.service';
 
 @Component({
   selector: 'app-show-data',
