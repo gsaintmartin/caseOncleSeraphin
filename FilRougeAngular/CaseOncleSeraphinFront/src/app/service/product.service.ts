@@ -8,13 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ProductService {
 
-<<<<<<< HEAD
-
-  private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/products/';
-=======
   private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/';
-
->>>>>>> 6d895475ba30605fbb94505e375e6ea3527f3e4d
 
   constructor(private httpClient: HttpClient) { }
 
@@ -24,19 +18,11 @@ export class ProductService {
     return this.httpClient.get<Product[]>(this.baseUrl + 'products', { headers });
   }
 
-
-
   addProductToCart(product: any) {
     localStorage.setItem("product", JSON.stringify(product));
   }
 
-<<<<<<< HEAD
-  addProductToCart(product: any) {
-    localStorage.setItem("product", JSON.stringify(product));
-  }
 
-=======
->>>>>>> 6d895475ba30605fbb94505e375e6ea3527f3e4d
   getProductFromCart(): Product[] {
     return JSON.parse(localStorage.getItem('product'));
   }
@@ -45,8 +31,4 @@ export class ProductService {
     return localStorage.removeItem("product");
   }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6d895475ba30605fbb94505e375e6ea3527f3e4d
 }
