@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LoginComponent } from 'src/app/login/login.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationService } from 'src/app/service/authentication.service';
@@ -15,7 +15,7 @@ export class NavbarCustomerComponent implements OnInit {
 
   navbarOpen = false;
 
-  numberProducts = 12;
+  @Input() numberProducts ;
 
   ngOnInit() {
   }
@@ -34,10 +34,7 @@ this.navbarOpen = !this.navbarOpen;
     });
   }
 
-  addProductCart() {
 
-    this.numberProducts += 1;
-  }
 
 
 }
