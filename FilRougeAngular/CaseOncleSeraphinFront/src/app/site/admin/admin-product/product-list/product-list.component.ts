@@ -1,10 +1,10 @@
-import { ProductDetailsComponent } from '../site/admin/admin-product/product-details/product-details.component';
+import { ProductDetailsComponent } from '../product-details/product-details.component';
 import { Observable } from 'rxjs';
-//import { ProductService } from '../site/admin/admin-product/product.service';
-import { Product } from '../product';
+
+import { Product } from '../../../../product';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductService } from '../service/product.service';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -24,8 +24,14 @@ export class ProductListComponent implements OnInit {
   reloadData() {
     this.products = this.productService.getProductsList();
   }
-
-  deleteproduct(id: number) {
+  deleteProduct(id: number) {
+    this.productService.deleteProduct(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error));
   }
 
   productDetails(id: number) {
