@@ -11,16 +11,6 @@ import { catchError, tap, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductService {
-  addProductToCart(productAddedTocart: Product[]) {
-    throw new Error("Method not implemented.");
-  }
-  removeAllProductFromCart() {
-    throw new Error("Method not implemented.");
-  }
-  getProductFromCart(): Product[] {
-    throw new Error("Method not implemented.");
-  }
-
 
   private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/product';
 
@@ -100,5 +90,13 @@ export class ProductService {
       );
 
       }
-
+addProductToCart(productAddedTocart: Product[]) {
+    throw new Error("Method not implemented.");
+  }
+  removeAllProductFromCart() {
+    throw new Error("Method not implemented.");
+  }
+  getProductFromCart(): Product[] {
+    throw new Error("Method not implemented.");
+  }
 }
