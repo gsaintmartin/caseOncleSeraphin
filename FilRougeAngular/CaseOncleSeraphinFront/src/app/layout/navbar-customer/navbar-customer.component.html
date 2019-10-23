@@ -28,7 +28,7 @@
                 data-toggle="modal" data-target="#elegantModalForm"
                 *ngIf="!loginService.isUserLoggedIn()" (click)="openModal()">Se
                 connecter</a>
-              <a *ngIf="!loginService.isUserLoggedIn()" routerLink="register">Créer
+              <a *ngIf="!loginService.isUserLoggedIn()" routerLink="/register">Créer
                 un compte</a>
               <a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout"
                 class="nav-link">Se déconnecter</a>
@@ -41,7 +41,7 @@
                 <i class="flaticon-bag"></i>
                 <span>{{numberProducts}}</span>
               </div>
-              <a href="cart">Panier</a>
+              <a routerLink="/cart">Panier</a>
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@
     </div>
   </nav> -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" routerLink="index">
+    <a class="navbar-brand" routerLink="/index">
       Menu
     </a>
 
@@ -89,27 +89,27 @@
     <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="product">Notre sélection</a>
+          <a class="nav-link" routerLink="/product">Notre sélection</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="category_all">Tous nos rhums</a>
+          <a class="nav-link" routerLink="/category_all">Tous nos rhums</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="category_blancs">Rhums blancs</a>
+          <a class="nav-link" routerLink="/category_blancs">Rhums blancs</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="category_agricoles">Rhums Agricoles</a>
+          <a class="nav-link" routerLink="/category_agricoles">Rhums Agricoles</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="category_vieux">Rhums vieux</a>
+          <a class="nav-link" routerLink="/category_vieux">Rhums vieux</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="contact">Une question?</a>
+          <a class="nav-link" routerLink="/contact">Une question?</a>
         </li>
 
       </ul>
