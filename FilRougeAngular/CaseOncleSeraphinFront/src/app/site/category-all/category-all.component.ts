@@ -13,7 +13,9 @@ export class CategoryAllComponent implements OnInit {
 
   @Output() numberProducts;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {
+
+  }
 
   ngOnInit() {
     this.productService.getAll().subscribe(result => {

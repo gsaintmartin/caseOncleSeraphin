@@ -11,7 +11,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/';
+  private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/product';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
