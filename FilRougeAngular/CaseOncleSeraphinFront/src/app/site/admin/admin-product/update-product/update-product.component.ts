@@ -45,6 +45,4 @@ export class UpdateproductComponent implements OnInit {
     this.router.navigate(['/products']);
   }
 
-
-  
 }
