@@ -18,7 +18,7 @@ export class CategoryAllComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productService.getAll().subscribe(result => {
+    this.productService.getAllProducts().subscribe(result => {
       this.products = result;
       return;
     });
