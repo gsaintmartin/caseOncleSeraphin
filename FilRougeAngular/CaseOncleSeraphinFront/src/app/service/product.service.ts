@@ -3,6 +3,7 @@ import { Product } from '../product';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+
 // Gipsy style
 import { catchError, tap, map } from 'rxjs/operators';
 
@@ -10,6 +11,7 @@ import { catchError, tap, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductService {
+
 
   private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/';
 
@@ -23,7 +25,6 @@ export class ProductService {
     stockQuantity: number;
     category: Category;
   */
-
 
 
   constructor(private httpClient: HttpClient) { }
@@ -88,19 +89,7 @@ export class ProductService {
         tap(heroes => console.log('fetched products')),
         catchError(this.handleError('getProducts', []))
       );
-  }
 
-  addProductToCart(product: any) {
-    localStorage.setItem('product', JSON.stringify(product));
-  }
-
-
-  getProductFromCart(): Product[] {
-    return JSON.parse(localStorage.getItem('product'));
-  }
-
-  removeAllProductFromCart() {
-    return localStorage.removeItem('product');
-  }
+      }
 
 }
