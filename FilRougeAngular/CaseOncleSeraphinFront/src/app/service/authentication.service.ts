@@ -45,7 +45,10 @@ export class AuthenticationService {
     console.log(!(user === null));
     return !(user === null);
   }
-
+  isUserLogginAdmin(){
+    const user = sessionStorage.getItem('username');
+    return (user === 'bdeeljore' || user === 'gsaintmartin' || user === 'jaugier' || user === 'pgiraud');
+  }
   logOut() {
     sessionStorage.removeItem('username');
   }
