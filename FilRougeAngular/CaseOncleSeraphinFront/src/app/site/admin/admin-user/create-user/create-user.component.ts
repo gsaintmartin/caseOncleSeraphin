@@ -1,6 +1,10 @@
 import { UserService } from '../../../../service/user.service';
 // tslint:disable-next-line: max-line-length
+<<<<<<< HEAD
 import { User } from 'C:/Users/formation/Desktop/caseOncleSeraphin/caseOncleSeraphin/FilRougeAngular/CaseOncleSeraphinFront/src/app/user';
+=======
+import { User } from '../../../../user';
+>>>>>>> 83fc68575d203433ec895006d3ccd08b1ff96869
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 

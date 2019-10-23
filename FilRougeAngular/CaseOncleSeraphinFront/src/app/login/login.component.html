@@ -6,15 +6,18 @@
     <button type="button" class="close" aria-label="Close" (click)="dismiss()">
       <span aria-hidden="true">&times;</span>
     </button>
+
   </div>
   <!--Body-->
+
   <div class="modal-body mx-4">
     <!--Body-->
-    <div class="error" *ngIf="invalidLogin === true">MAUVAIS USERNAME OU PASSWORD INVALIDE</div>
+
 
     <div class="md-form mb-5">
+      <div class="modal-title w-100 dark-grey-text font-weight-bold my-3"  *ngIf="invalidLogin === true"> Erreur d'authentification</div>
       <input type="email" id="Form-email1" class="form-control validate" [(ngModel)]="username" [ngModelOptions]="{standalone : true}">
-      <label data-error="wrong" data-success="right" for="Form-email1">email</label>
+      <label data-error="wrong" data-success="right" for="Form-email1">pseudo</label>
     </div>
 
     <div class="md-form pb-3">
