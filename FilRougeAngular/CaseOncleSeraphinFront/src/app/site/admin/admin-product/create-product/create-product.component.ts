@@ -1,11 +1,21 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ProductService } from '../../../../service/product.service';
 =======
 
 >>>>>>> c727b0416e8854a0e588f031e2822ca858c1fbd9
+=======
+
+>>>>>>> master
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+<<<<<<< HEAD
+import { Product } from 'src/app/Product';
+=======
+
+
 import { Product } from 'src/app/product';
+>>>>>>> 58f3699155e14dcf05ae36f2599a009edf72c81c
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -43,6 +53,6 @@ export class CreateproductComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/products']);
+    this.router.navigate(['/product']);
   }
 }
