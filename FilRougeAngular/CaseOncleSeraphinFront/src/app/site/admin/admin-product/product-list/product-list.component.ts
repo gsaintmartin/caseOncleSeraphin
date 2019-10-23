@@ -1,9 +1,10 @@
 import { ProductDetailsComponent } from '../product-details/product-details.component';
 import { Observable } from 'rxjs';
 import { Product } from '../../../../product';
-import { Component, OnInit } from '@angular/core';
+import { OnInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
+
 
 @Component({
   selector: 'app-product-list',
@@ -32,6 +33,7 @@ export class ProductListComponent implements OnInit {
         },
         error => console.log(error));
   }
+  
 
   productDetails(id: number) {
     this.router.navigate(['details', id]);
