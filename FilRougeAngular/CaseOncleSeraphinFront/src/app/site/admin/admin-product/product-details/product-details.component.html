@@ -1,1 +1,30 @@
-<p>product-details works!</p>
+<h2>Product Details</h2>
+
+<hr/>
+<div *ngIf="Product">
+  <div>
+    <label><b>Name: </b></label> {{product.Name}}
+  </div>
+  <div>
+    <label><b>Description: </b></label> {{product.description}}
+  </div>
+  <div>
+    <label><b>Image: </b></label> {{product.image}}
+  </div>
+  <div>
+    <label><b>Company: </b></label> {{product.company}}
+  </div>
+  <div>
+    <label><b>Price: </b></label> {{product.price}}
+  </div>
+  <div>
+    <label><b>Stock Quantity: </b></label> {{product.stockQuantity}}
+  </div>
+  <div>
+    <label><b>Category: </b></label> {{product.category}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to product List</button><br>

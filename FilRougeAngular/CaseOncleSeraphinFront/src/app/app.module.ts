@@ -36,7 +36,8 @@ import { Product2CriteresService } from './service/product2-criteres.service';
 
 import { CreateproductComponent } from './site/admin/admin-product/create-product/create-product.component';
 import { ProductDetailsComponent } from './site/admin/admin-product/product-details/product-details.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductListComponent } from './site/admin/admin-product/product-list/product-list.component';
+import { UpdateproductComponent } from './site/admin/admin-product/update-product/update-product.component';
 
 import { CreatecategoryComponent } from './site/admin/admin-category/create-category/create-category.component';
 import { CategoryDetailsComponent } from './site/admin/admin-category/category-details/category-details.component';
@@ -45,6 +46,7 @@ import { CategoryListComponent } from './site/admin/admin-category/category-list
 import { CreateuserComponent } from './site/admin/admin-user/create-user/create-user.component';
 import { UserListComponent } from './site/admin/admin-user/user-list/user-list.component';
 import { UserDetailsComponent } from './site/admin/admin-user/user-details/user-details.component'
+
 
 
 
@@ -60,7 +62,7 @@ const appRoutes: Routes = [
   { path: 'category_vieux', component: CategoryVieuxComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'page_admin', canActivate: [AuthGuardService], component: PageAdminComponent },
+  { path: 'page_admin', /*canActivate: [AuthGuardService],*/ component: PageAdminComponent },
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -68,13 +70,14 @@ const appRoutes: Routes = [
 
   { path: 'create_user', component: CreateuserComponent },
   { path: 'create_category', component: CreatecategoryComponent },
-  { path: 'create_user', component: CreateuserComponent },
+  { path: 'create_product', component: CreateproductComponent },
   { path: 'product_list', component: ProductListComponent },
   { path: 'user_list', component: UserListComponent },
   { path: 'category_list', component: CategoryListComponent },
   { path: 'product_details', component: ProductDetailsComponent },
   { path: 'user_details', component: UserDetailsComponent },
   { path: 'category_details', component: CategoryDetailsComponent },
+  { path: 'update_product/:id', component: UpdateproductComponent },
 
   { path: 'not-found', component: Erreur404Component },
   { path: '**', redirectTo: '/not-found' },
@@ -111,6 +114,7 @@ const appRoutes: Routes = [
     ProductListComponent,
     ProductDetailsComponent,
     CreateproductComponent,
+    UpdateproductComponent,
     CategoryListComponent,
     CreatecategoryComponent,
     CategoryDetailsComponent,
