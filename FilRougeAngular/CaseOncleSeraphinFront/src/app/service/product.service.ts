@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../product';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+// Gipsy style
+import { catchError, tap, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +13,72 @@ export class ProductService {
 
   private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/';
 
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  };
+
+/*
+  company: string;
+  price: number;
+  stockQuantity: number;
+  category: Category;
+*/
+
+
+
   constructor(private httpClient: HttpClient) { }
 
-  getAll(): Observable<Product[]> {
-    const headers: HttpHeaders = new HttpHeaders().set('Accept', 'application/json');
+  updateProduct(id, product: Product ): Observable<any> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.httpClient.put(url, product, this.httpOptions).pipe(
+      tap(_ => console.log(`updated product id=${id}`)),
+      catchError(this.handleError<any>('updateProduct'))
+    );  }
 
-    return this.httpClient.get<Product[]>(this.baseUrl + 'products', { headers });
+
+    private handleError<T>(operation = 'operation', result?: T) {
+      return (error: any): Observable<T> => {
+
+        // TODO: send the error to remote logging infrastructure
+        console.error(error); // log to console instead
+
+        // Let the app keep running by returning an empty result.
+        return of(result as T);
+      };
+    }
+
+
+  getProduct(id: number): Observable<Product> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.httpClient.get<Product>(url).pipe(
+      tap(_ => console.log(`fetched product id=${id}`)),
+      catchError(this.handleError<Product>(`getProduct id=${id}`))
+    );
+  }
+
+  createProduct(product: Product): Observable<Product> {
+    return this.httpClient.post<Product>(this.baseUrl, product, this.httpOptions).pipe(
+      // tslint:disable-next-line: no-shadowed-variable
+      tap((product: Product) => console.log(`added product w/ id=${product.id}`)),
+      catchError(this.handleError<Product>('addProduct'))
+    );
+  }
+
+  deleteProduct (id): Observable<Product> {
+    const url = `${this.baseUrl}/${id}`;
+
+    return this.httpClient.delete<Product>(url, this.httpOptions).pipe(
+      tap(_ => console.log(`deleted product id=${id}`)),
+      catchError(this.handleError<Product>('deleteProduct'))
+    );
+  }
+
+  getAll(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.baseUrl)
+    .pipe(
+      tap(heroes => console.log('fetched products')),
+      catchError(this.handleError('getProducts', []))
+    );
   }
 
   addProductToCart(product: any) {
@@ -30,5 +93,7 @@ export class ProductService {
   removeAllProductFromCart() {
     return localStorage.removeItem('product');
   }
-
+  getProductsList(): Observable<any[]> {
+    throw new Error("Method not implemented.");
+  }
 }

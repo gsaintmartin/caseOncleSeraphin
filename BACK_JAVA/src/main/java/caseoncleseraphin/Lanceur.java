@@ -109,7 +109,7 @@ public class Lanceur {
 				System.out.println("l'utilisateur " + admin3.getUsername() + " a ete créé.");
 			}
 			User admin4 = new User("Saint-Martin", "Guillaume", "gsaintmartin", "gsaintmartin66@gmail.com",
-					"10 rue de la resistance", "0699842035", "azerty", (LocalDate.of(2019, 9, 21)), roleAdmin);
+					"11 rue du roi Arthur", "0668168007", "azerty", (LocalDate.of(2019, 9, 21)), roleAdmin);
 			try {
 				userService.findOneByUsername("gsaintmartin");
 				System.out.println("le login " + admin4.getUsername() + " existe déjà.");
