@@ -156,7 +156,7 @@ public class Lanceur {
 
 			productService.saveProduct(prod3);
 			
-			Product prod4 = new Product("FLOR DE CANARD 18 ans 40%", "FLOR DE CANARD 18 ans 40%",
+			Product prod4 = new Product("FLOR DE CANA 18 ans 40%", "FLOR DE CANA 18 ans 40%",
 					"https://www.whisky.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/1/m19507_2.jpg",
 					"FLOR DE CANA", 69, 13);
 

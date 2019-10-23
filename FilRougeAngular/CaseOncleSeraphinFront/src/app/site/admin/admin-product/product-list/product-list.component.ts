@@ -1,4 +1,4 @@
-import { ProductDetailsComponent } from '../product-details/product-details.component';
+//import { ProductDetailsComponent } from '../product-details/product-details.component';
 import { Observable } from 'rxjs';
 
 import { Component, OnInit } from '@angular/core';
