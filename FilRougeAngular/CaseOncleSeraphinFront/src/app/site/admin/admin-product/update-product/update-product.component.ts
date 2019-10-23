@@ -44,4 +44,7 @@ export class UpdateproductComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/products']);
   }
+
+
+  
 }
