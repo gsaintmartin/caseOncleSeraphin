@@ -66,7 +66,7 @@ export class ProductService {
   }
 
   createProduct(product: Product): Observable<Product> {
-    return this.httpClient.post<Product>(this.baseUrl, product, this.httpOptions).pipe(
+    return this.httpClient.post<Product>(this.baseUrl + 'products', product, this.httpOptions).pipe(
       // tslint:disable-next-line: no-shadowed-variable
       tap((product: Product) => console.log(`added product w/ id=${product.id}`)),
       catchError(this.handleError<Product>('addProduct'))
@@ -82,7 +82,7 @@ export class ProductService {
     );
   }
 
-  getAll(): Observable<Product[]> {
+  getAllProducts(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.baseUrl)
       .pipe(
         tap(heroes => console.log('fetched products')),

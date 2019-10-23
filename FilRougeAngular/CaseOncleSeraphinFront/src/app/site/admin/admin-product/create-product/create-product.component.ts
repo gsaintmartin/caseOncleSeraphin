@@ -41,6 +41,6 @@ export class CreateproductComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/products']);
+    this.router.navigate(['/product']);
   }
 }
