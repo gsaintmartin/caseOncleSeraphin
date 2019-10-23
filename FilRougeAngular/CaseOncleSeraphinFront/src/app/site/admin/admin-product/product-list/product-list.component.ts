@@ -1,9 +1,10 @@
-import { ProductDetailsComponent } from '../product-details/product-details.component';
+//import { ProductDetailsComponent } from '../product-details/product-details.component';
 import { Observable } from 'rxjs';
-import { Product } from '../../../../product';
-import { OnInit, Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
+import { Product } from 'src/app/product';
 
 
 @Component({
@@ -38,7 +39,7 @@ export class ProductListComponent implements OnInit {
   productDetails(id: number) {
     this.router.navigate(['details', id]);
 
-  }
+
   updateProduct(id: number) {
     this.router.navigate(['update', id]);
 

@@ -3,6 +3,7 @@ import { Product } from '../product';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+
 // Gipsy style
 import { catchError, tap, map } from 'rxjs/operators';
 
@@ -11,7 +12,12 @@ import { catchError, tap, map } from 'rxjs/operators';
 })
 export class ProductService {
 
+<<<<<<< HEAD
+
   private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/';
+=======
+  private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/product';
+>>>>>>> 58f3699155e14dcf05ae36f2599a009edf72c81c
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -23,7 +29,6 @@ export class ProductService {
     stockQuantity: number;
     category: Category;
   */
-
 
 
   constructor(private httpClient: HttpClient) { }
@@ -66,7 +71,7 @@ export class ProductService {
   }
 
   createProduct(product: Product): Observable<Product> {
-    return this.httpClient.post<Product>(this.baseUrl, product, this.httpOptions).pipe(
+    return this.httpClient.post<Product>(this.baseUrl + 'products', product, this.httpOptions).pipe(
       // tslint:disable-next-line: no-shadowed-variable
       tap((product: Product) => console.log(`added product w/ id=${product.id}`)),
       catchError(this.handleError<Product>('addProduct'))
@@ -82,25 +87,13 @@ export class ProductService {
     );
   }
 
-  getAll(): Observable<Product[]> {
+  getAllProducts(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.baseUrl)
       .pipe(
         tap(heroes => console.log('fetched products')),
         catchError(this.handleError('getProducts', []))
       );
-  }
 
-  addProductToCart(product: any) {
-    localStorage.setItem('product', JSON.stringify(product));
-  }
-
-
-  getProductFromCart(): Product[] {
-    return JSON.parse(localStorage.getItem('product'));
-  }
-
-  removeAllProductFromCart() {
-    return localStorage.removeItem('product');
-  }
+      }
 
 }

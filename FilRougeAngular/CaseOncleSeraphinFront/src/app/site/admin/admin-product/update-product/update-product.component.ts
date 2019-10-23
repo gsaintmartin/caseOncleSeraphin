@@ -1,47 +1,24 @@
+<<<<<<< HEAD
+import { OnInit, Component } from '@angular/core';
+=======
 import {  OnInit, Component } from '@angular/core';
-import { Product } from '../../../../Product';
+import { Product } from '../../../../product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../../../service/product.service';
 
 
+>>>>>>> 58f3699155e14dcf05ae36f2599a009edf72c81c
 
 @Component({
   selector: 'app-update-product',
   templateUrl: './update-product.component.html',
   styleUrls: ['./update-product.component.css']
 })
-export class UpdateproductComponent implements OnInit {
+export class UpdateProductComponent implements OnInit {
 
-  id: number;
-  product: Product;
-
-  constructor(private route: ActivatedRoute,private router: Router,
-              private productService: ProductService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.product = new Product();
-
-    this.id = this.route.snapshot.params['id'];
-
-    this.productService.getProduct(this.id)
-      .subscribe(data => {
-        console.log(data)
-        this.product = data;
-      }, error => console.log(error));
   }
 
-  updateproduct() {
-    this.productService.updateProduct(this.id, this.product)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.product = new Product();
-    this.gotoList();
-  }
-
-  onSubmit() {
-    this.updateproduct();
-  }
-
-  gotoList() {
-    this.router.navigate(['/products']);
-  }
 }
