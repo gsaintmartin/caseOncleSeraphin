@@ -102,7 +102,5 @@ export class ProductService {
   removeAllProductFromCart() {
     return localStorage.removeItem('product');
   }
-  getProductsList(): Observable<any[]> {
-    throw new Error("Method not implemented.");
-  }
+
 }

@@ -1,6 +1,5 @@
 import { ProductDetailsComponent } from '../product-details/product-details.component';
 import { Observable } from 'rxjs';
-
 import { Product } from '../../../../product';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
