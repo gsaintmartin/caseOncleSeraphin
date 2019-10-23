@@ -119,7 +119,7 @@ public class Lanceur {
 			}
 
 			// Creation des clients
-			User client1 = new User("Duce", "J-C", "jcduce", "jcduce@gmail.com", "11 rue de la resistance",
+			User client1 = new User("Duce", "J-C", "jcduce", "jcduce@gmail.com", "15 rue de la resistance",
 					"0699842137", "azerty", (LocalDate.of(2019, 9, 24)), roleCustomer);
 
 			try {
@@ -132,7 +132,7 @@ public class Lanceur {
 
 			// Creation des produits
 
-			Product prod1 = new Product("MATUSALEM 15 ans Gran Reserva 40%", "MATUSALEM 15 ans Gran Reserva 40%",
+			Product prod1 = new Product("MATUSALEM 15 ans Gran Reserva 40%", "MATUSALEMEUH 19 ans Gran Reserva 40%",
 					"https://www.whisky.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/1/m16007.jpg",
 					"MATUSALEM", 35, 10);
 
@@ -156,7 +156,7 @@ public class Lanceur {
 
 			productService.saveProduct(prod3);
 			
-			Product prod4 = new Product("FLOR DE CANA 18 ans 40%", "FLOR DE CANA 18 ans 40%",
+			Product prod4 = new Product("FLOR DE CANARD 18 ans 40%", "FLOR DE CANARD 18 ans 40%",
 					"https://www.whisky.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/m/1/m19507_2.jpg",
 					"FLOR DE CANA", 69, 13);
 
