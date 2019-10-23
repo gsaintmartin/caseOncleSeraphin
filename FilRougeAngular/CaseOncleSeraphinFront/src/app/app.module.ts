@@ -34,17 +34,24 @@ import { ShowDataComponent } from './show-data/show-data.component';
 import { Product2CriteresService } from './service/product2-criteres.service';
 
 
-import { CreateproductComponent } from './site/admin/admin-product/create-product/create-product.component';
+
+
+
 import { ProductDetailsComponent } from './site/admin/admin-product/product-details/product-details.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
-import { CreatecategoryComponent } from './site/admin/admin-category/create-category/create-category.component';
+
 import { CategoryDetailsComponent } from './site/admin/admin-category/category-details/category-details.component';
 import { CategoryListComponent } from './site/admin/admin-category/category-list/category-list.component';
 
-import { CreateuserComponent } from './site/admin/admin-user/create-user/create-user.component';
 import { UserListComponent } from './site/admin/admin-user/user-list/user-list.component';
-import { UserDetailsComponent } from './site/admin/admin-user/user-details/user-details.component'
+import { UserDetailsComponent } from './site/admin/admin-user/user-details/user-details.component';
+
+import { CreateproductComponent } from './site/admin/admin-product/create-product/create-product.component';
+import { CreatecategoryComponent } from './site/admin/admin-category/create-category/create-category.component';
+import { CreateuserComponent } from './site/admin/admin-user/create-user/create-user.component';
+
+
 
 
 
@@ -66,9 +73,9 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
 
-  { path: 'create_user', component: CreateuserComponent },
+
   { path: 'create_category', component: CreatecategoryComponent },
-  { path: 'create_user', component: CreateuserComponent },
+ { path: 'create_user', component: CreateuserComponent },
   { path: 'product_list', component: ProductListComponent },
   { path: 'user_list', component: UserListComponent },
   { path: 'category_list', component: CategoryListComponent },
@@ -114,6 +121,7 @@ const appRoutes: Routes = [
     CategoryListComponent,
     CreatecategoryComponent,
     CategoryDetailsComponent,
+
 
 
 

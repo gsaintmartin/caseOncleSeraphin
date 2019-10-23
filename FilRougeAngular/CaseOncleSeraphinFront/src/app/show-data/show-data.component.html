@@ -4,4 +4,10 @@
     <button><i class="flaticon-search"></i></button>
   </form> -->
 
-</div>
+
+  <form   #searchInfo (ngSubmit)="searchForm(searchInfo)" class="header-search-form">
+    <input type="text"  placeholder="Chercher une bouteille..." >
+
+    <button><i class="flaticon-search"></i></button>
+  </form>
+

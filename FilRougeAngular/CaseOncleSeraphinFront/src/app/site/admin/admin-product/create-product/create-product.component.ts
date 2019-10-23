@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import { ProductService } from '../../../../service/product.service';
+=======
+
+>>>>>>> c727b0416e8854a0e588f031e2822ca858c1fbd9
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/product';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-create-product',

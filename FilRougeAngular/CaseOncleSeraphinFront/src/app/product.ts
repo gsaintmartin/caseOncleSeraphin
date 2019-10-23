@@ -11,5 +11,5 @@ export class Product {
   price: number;
   stockQuantity: number;
   category: Category;
-  listCommandLines: LinkedList<CommandLine>;
+  //listCommandLines: LinkedList<CommandLine>;
 }
