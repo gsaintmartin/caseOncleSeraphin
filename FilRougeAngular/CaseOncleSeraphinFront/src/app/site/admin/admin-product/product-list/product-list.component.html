@@ -1,19 +1,23 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h2>Product List</h2>
+    <h2>Liste des produits</h2>
   </div>
+  <button class="btn btn-info" style="margin-left: 10px"
+  class="nav-link" routerLink="/create_product">
+  Créer nouveau produit
+</button>
   <div class="panel-body">
     <table class="table table-striped">
       <thead>
         <tr>
           <th></th>
           <th>Id</th>
-          <th>Name</th>
+          <th>Nom</th>
           <th>Description</th>
           <th>Image</th>
-          <th>Compagny</th>
-          <th>Price</th>
-          <th>Stock quantity</th>
+          <th>Compagnie</th>
+          <th>Prix</th>
+          <th>Quantité</th>
         </tr>
       </thead>
       <tbody>
@@ -25,8 +29,8 @@
           <td>{{product.price}}</td>
           <td>{{product.stockQuantity}}</td>
           <td>
-            <button (click)="deleteProduct(product.id)" class="btn btn-danger">Delete</button>
-            <button (click)="updateProduct(product.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+            <button (click)="deleteProduct(product.id)" class="btn btn-danger">Supprimer</button>
+            <button (click)="updateProduct(product.id)" class="btn btn-info" style="margin-left: 10px">Modifier</button>
             <button (click)="productDetails(product.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
           </td>
         </tr>
