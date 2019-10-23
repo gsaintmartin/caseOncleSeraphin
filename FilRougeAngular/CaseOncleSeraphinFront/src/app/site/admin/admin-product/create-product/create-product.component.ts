@@ -30,15 +30,11 @@ export class CreateproductComponent implements OnInit {
     this.productService.createProduct(this.product)
       .subscribe(data => console.log(data), error => console.log(error));
     this.product = new Product();
-    this.gotoList();
+    this.router.navigate(['product_list']);
   }
 
   onSubmit() {
     this.submitted = true;
     this.save();
-  }
-
-  gotoList() {
-    this.router.navigate(['/product']);
   }
 }
