@@ -28,7 +28,12 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		    .antMatchers("/api/commands/**", "/api/users/**").authenticated()
 		    
 		    .antMatchers(HttpMethod.GET, "/api/categories/**", "/api/products/**").permitAll()
-		    .antMatchers("/api/**").authenticated();
+		    .antMatchers("/api/**").authenticated()
+		    .and().logout()
+		    .logoutSuccessUrl("/index")
+		    .logoutUrl("/perform_logout")
+		    .invalidateHttpSession(true)
+		    .deleteCookies("JSESSIONID");
 	}
 	
 	 @Bean
