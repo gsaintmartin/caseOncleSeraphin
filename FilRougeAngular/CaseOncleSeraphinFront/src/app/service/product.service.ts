@@ -12,7 +12,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/product';
+  private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*' })
@@ -83,7 +83,7 @@ export class ProductService {
   }
 
   getAllProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.baseUrl)
+    return this.httpClient.get<Product[]>(this.baseUrl + 'products' )
       .pipe(
         tap(heroes => console.log('fetched products')),
         catchError(this.handleError('getProducts', []))
