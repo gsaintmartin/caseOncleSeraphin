@@ -1,8 +1,8 @@
-
 import {  OnInit, Component } from '@angular/core';
-import { Product } from '../../../../product';
+import { Product } from '../../../../Product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../../../service/product.service';
+
 
 
 @Component({
@@ -10,11 +10,24 @@ import { ProductService } from '../../../../service/product.service';
   templateUrl: './update-product.component.html',
   styleUrls: ['./update-product.component.css']
 })
-export class UpdateProductComponent implements OnInit {
+export class UpdateproductComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  product: Product;
+
+  constructor(private route: ActivatedRoute,private router: Router,
+              private productService: ProductService) { }
 
   ngOnInit() {
+    this.product = new Product();
+
+    this.id = this.route.snapshot.params['id'];
+
+    this.productService.getProduct(this.id)
+      .subscribe(data => {
+        console.log(data)
+        this.product = data;
+      }, error => console.log(error));
   }
 
   updateproduct() {
@@ -31,7 +44,5 @@ export class UpdateProductComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/products']);
   }
-
-
 
 }
