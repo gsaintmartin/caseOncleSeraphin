@@ -1,34 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../product';
+import { Product } from 'src/app/product';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
-  private baseUrl = 'http://localhost:8080/caseOncleSeraphin/api/';
-
-  constructor(private httpClient: HttpClient) { }
-
-  getAll(): Observable<Product[]> {
-    const headers: HttpHeaders = new HttpHeaders().set('Accept', 'application/json');
-
-    return this.httpClient.get<Product[]>(this.baseUrl + 'products', { headers });
+  deleteProduct(id: number)  {
+    throw new Error("Method not implemented.");
+  }
+  getProductsList(): Observable<Product[]> {
+    throw new Error("Method not implemented.");
   }
 
-  addProductToCart(product: any) {
-    localStorage.setItem('product', JSON.stringify(product));
+  constructor() { }
+
+  createProduct(product: Product): Observable<Product> {
+    return;
   }
-
-
-  getProductFromCart(): Product[] {
-    return JSON.parse(localStorage.getItem('product'));
-  }
-
-  removeAllProductFromCart() {
-    return localStorage.removeItem('product');
-  }
-
 }
