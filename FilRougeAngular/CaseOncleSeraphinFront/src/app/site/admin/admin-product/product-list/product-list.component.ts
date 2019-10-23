@@ -39,13 +39,12 @@ export class ProductListComponent implements OnInit {
   productDetails(id: number) {
     this.router.navigate(['details', id]);
 
-<<<<<<< HEAD
+
   }
   updateProduct(id: number) {
     this.router.navigate(['update', id]);
 
-=======
->>>>>>> 27eddb12e34b04463adf56cc5b74645976bb48a6
+
   }
 
 }
